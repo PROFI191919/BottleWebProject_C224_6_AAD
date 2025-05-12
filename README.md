@@ -47,9 +47,9 @@ python app.py
 ## Authors
 
 * Demidova S. - SvetaDem
-* Ravilova D. - miasimaRav
-* Zolotova D. - WhoWhoWhy
-* Bessonova V. - PupickShnupick
+* Antonov E. - StockOslo
+* Andriyanov A. - Profi191919
+
 
 ## License
 
