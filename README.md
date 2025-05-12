@@ -18,7 +18,7 @@ Make sure you have the following installed on your system:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/SvetaDem/GraphLab-website.git
+git clone https://github.com/PROFI191919/BottleWebProject_C224_6_AAD.git
 ```
 
 2. Create and activate a virtual environment:
