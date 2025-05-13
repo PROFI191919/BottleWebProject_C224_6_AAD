@@ -367,3 +367,24 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# IDE-specific settings
+.idea/
+.vscode/
+.vs/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# User-specific settings
+*.user
+*.rsuser
+*.suo
+*.userosscache
+
+# Environment variables
+.env
+*.secret
+config/*.json
