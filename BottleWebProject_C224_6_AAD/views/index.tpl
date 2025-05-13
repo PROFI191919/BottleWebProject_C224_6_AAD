@@ -1,29 +1,22 @@
 % rebase('layout.tpl', title='Home Page', year=year)
 
-<div class="jumbotron">
-    <h1>Bottle</h1>
-    <p class="lead">Bottle is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://bottlepy.org/docs/dev/index.html" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+<div class="content">
+    <h1>Directed and Undirected Graphs. Weighted Graphs. Bipartite Graphs</h1>
+    <div class="text-block">
+        <h2>Directed and Undirected Graphs</h2>
+        <p>A graph is a mathematical structure consisting of a set of vertices and a set of edges connecting some pairs of vertices. Graphs are widely used in various fields, such as mathematics, computer science, and engineering, to model connections and interactions between objects.</p>
+        <h3>Directed Graph</h3>
+        <p>A directed graph (digraph) is a graph where each edge has a direction assigned to it. The edges of a directed graph are called arcs...</p>
+        <h3>Undirected Graph</h3>
+        <p>An undirected graph is a graph in which the edges have no direction...</p>
+        <h2>Weighted Graphs</h2>
+        <p>A weighted graph is a graph where each edge is assigned a numerical weight...</p>
+        <h2>Bipartite Graphs</h2>
+        <p>A bipartite graph is a graph whose vertices can be divided into two disjoint sets...</p>
+        <h2>Conclusion</h2>
+        <p>Understanding directed and undirected graphs, weighted graphs, and bipartite graphs plays an important role in graph theory and its applications...</p>
+    </div>
 </div>
+</body>
+</html>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Bottle gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://bottlepy.org/docs/dev/index.html">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
-</div>
