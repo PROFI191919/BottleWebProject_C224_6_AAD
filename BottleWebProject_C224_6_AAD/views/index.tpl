@@ -17,6 +17,5 @@
         <p>Understanding directed and undirected graphs, weighted graphs, and bipartite graphs plays an important role in graph theory and its applications...</p>
     </div>
 </div>
-</body>
-</html>
+
 
