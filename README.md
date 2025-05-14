@@ -1,19 +1,38 @@
-# GraphLab website
+# GraphLab Website
 
-A web project dedicated to visualizing and exploring graph theory concepts such as oriented and unoriented graphs, weighted graphs, and bipartite graphs.
+GraphLab is a multi-page educational web application built on the Bottle framework, designed to help users understand and interact with graph theory algorithms and concepts through hands-on implementation.
+
+## Features
+
+The application includes:
+- A main page with a title, a brief description of the topic, and links to relevant methods for solving the problem;
+- Pages with realization of the problem solving methods (each team member integrates his/her own page);
+- Pages with results output (generated programmatically);
+- Pages “About authors” with photos, full name and description of contribution to the project.
+
+Implementation includes:
+- Possibility of inputting raw data by the user;
+- Generation of random data;
+- Writing data to a file.
+
+## Implemented algorithms
+
+- **Topological sorting** - for educational pathway planning (DAG)
+- **Recommendation system** - based on a matrix of user ratings of items (interest graph)
+- **Community Determination** - using the Girvan-Newman algorithm.
 
 ## Getting Started
 
-These instructions will help you set up a local copy of the project for development and testing.
+These instructions will help you create a local copy of the project for development and testing.
 
-## Prerequisites
+### Prerequisites
 
 Make sure you have the following installed on your system:
 
 * Python 3.12
 * Git
 
-## Step-by-step guide to setting up your development environment
+### Step-by-step guide to setting up your development environment
 
 1. Clone the repository:
 
@@ -46,10 +65,9 @@ python app.py
 
 ## Authors
 
-* Demidova S. - SvetaDem
-* Antonov E. - StockOslo
-* Andriyanov A. - Profi191919
-
+* Svetlana Demidova - SvetaDem
+* Erik Antonov - StockOslo
+* Andrey Andriyanov - Profi191919
 
 ## License
 
@@ -57,4 +75,4 @@ This project is licensed under the MIT license - see the LICENSE.md file for det
 
 ## Acknowledgements
 
-Thanks to the open source community for various tools and resources.
+Thanks to the open source community and the developers of Bottle for providing a flexible and minimalistic framework.
