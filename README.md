@@ -15,11 +15,11 @@ Implementation includes:
 - Generation of random data;
 - Writing data to a file.
 
-## Implemented algorithms
+## Realized algorithms for solving problems
 
 - **Educational Trajectory**. It is built using a topological sorting algorithm based on a directed acyclic graph (DAG), where topics are connected by dependencies and complexity of learning.
 - **Recommendation System**. Implemented based on an interest graph constructed from a preference matrix using a nearest neighbor algorithm.
-- **Community Discovery** - Occurs using the Girvan-Newman algorithm based on an undirected graph given by a adjacency matrix.
+- **Community Discovery**. Occurs using the Girvan-Newman algorithm based on an undirected graph given by a adjacency matrix.
 
 ## Getting Started
 
