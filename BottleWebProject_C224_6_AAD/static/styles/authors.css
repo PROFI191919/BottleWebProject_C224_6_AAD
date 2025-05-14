@@ -1,0 +1,45 @@
+.description-container {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(-20px); /* Немного поднято вверх */
+    animation: fadeIn 1.5s ease-in-out forwards; /* ease-in-out делает анимацию более плавной, 
+        forwards сохраняет конечное состояние */
+}
+
+.album-cover-all {
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    margin: 20px 0; /* верх-низ, влево-вправо */
+    border: 5px solid white; /* белая рамка */
+}
+
+.description-text {
+    flex: 1; /* Занимает оставшееся доступное пространство */
+    text-align: left;
+}
+
+.description-text h3 {
+    color: #0072ff;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #0072ff; /* Синяя линия под заголовком */
+}
+
+.quote-box {
+    border-left: 5px solid #0072ff;
+    background-color: rgba(0, 114, 255, 0.1);
+    padding: 15px;
+    font-style: italic; /* Курсивный текст */
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+.quote {
+    margin: 0;
+    font-size: 16px;
+}
