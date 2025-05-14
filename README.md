@@ -17,9 +17,9 @@ Implementation includes:
 
 ## Implemented algorithms
 
-- **Topological sorting** - for educational pathway planning (DAG)
-- **Recommendation system** - based on a matrix of user ratings of items (interest graph)
-- **Community Determination** - using the Girvan-Newman algorithm.
+- **Educational Trajectory**. It is built using a topological sorting algorithm based on a directed acyclic graph (DAG), where topics are connected by dependencies and complexity of learning.
+- **Recommendation System**. Implemented based on an interest graph constructed from a preference matrix using a nearest neighbor algorithm.
+- **Community Discovery** - Occurs using the Girvan-Newman algorithm based on an undirected graph given by a adjacency matrix.
 
 ## Getting Started
 
