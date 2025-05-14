@@ -33,3 +33,13 @@ def demidova():
         message='Your application description page.',
         year=datetime.now().year
     )
+
+@route('/EducationalTrajectoryTheory')
+@view('EducationalTrajectoryTheory')
+def EducationalTrajectoryTheory():
+    """Renders the recommendation systems page."""
+    return dict(
+        title='Recommendation systems',
+        message='Your application description page.',
+        year=datetime.now().year
+    )
