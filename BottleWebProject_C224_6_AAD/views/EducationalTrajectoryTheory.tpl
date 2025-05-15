@@ -141,7 +141,7 @@
             <label for="graphFile"><strong>Choose a JSON file:</strong></label><br>
             <input type="file" id="graphFile" name="graphFile" accept=".json" required style="margin-top: 8px; margin-bottom: 16px;"><br>
 
-            <button type="submit" class="button-primary">Calculate</button>
+            <button type="submit" class="btn-calc">Calculate</button>
         </form>
 
         <p class="note">After uploading, the system will process your data and display a personalized learning trajectory based on your file.</p>

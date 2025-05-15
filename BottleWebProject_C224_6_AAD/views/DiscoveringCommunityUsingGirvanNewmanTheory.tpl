@@ -134,7 +134,7 @@
 
     <form id="adjacencyMatrixForm" action="/DiscoveringCommunityUsingGirvanNewmanDecision" style="margin-top: 20px; display: none;">
       <div id="matrixContainer"></div>
-      <button type="submit" class="button-primary" style="margin-top: 10px;">Calculate</button>
+      <button type="submit" class="btn-calc" style="margin-top: 10px;">Calculate</button>
     </form>
   </div>
 </div>
