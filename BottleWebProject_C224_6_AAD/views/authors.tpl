@@ -4,7 +4,6 @@
     <h1 class="topic-title">About authors</h1>
     <div class="space-y-8">
 
-        <!-- Первый блок -->
         <div class="text-block">
            <div class="text-content">
     <h2>Demidova Svetlana Dmitrievna</h2>
@@ -48,7 +47,7 @@
                     <li>Navigation Panel</li>
                     <li>Theory of Community Detection with the Girvan-Newman Algorithm</li>
                     <li>Practical Module for Building a Community Detection with the Girvan-Newman Algorithm</li>
-                    <li>Sigma GAY</li>
+                    
                  </ul>
             </div>
             <div class="image-container">
