@@ -1,6 +1,6 @@
 % rebase('layout.tpl', title='Theory Page', year=year)
 
-<div class="content">
+<div class="content fade-in">
     <h1 class="topic-title">Creating a recommendation system</h1>
     <div class="text-block">
         <h2>Directed and Undirected Graphs</h2>
