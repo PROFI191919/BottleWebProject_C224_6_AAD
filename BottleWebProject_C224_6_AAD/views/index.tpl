@@ -1,7 +1,7 @@
 % rebase('layout.tpl', title='Home Page', year=year)
 
 <div class="content">
-    <h1 class="topic-title">Directed and Undirected Graphs. Weighted Graphs. Bipartite Graphs</h1>
+    <h1>Directed and Undirected Graphs. Weighted Graphs.<br>Bipartite Graphs</h1>
     <div class="text-block">
         <h2>Directed and Undirected Graphs</h2>
         <p>
@@ -26,7 +26,7 @@
                 <hr>
                 <p>route sheet of the learner's training based on the initial graph.</p>
             </div>
-            <a class="btn-primary" href="/antonov">Go &raquo;</a>
+            <a class="btn-primary" href="/EducationalTrajectoryTheory">Go &raquo;</a>
         </div>
         <div class="col">
             <div class="col-content">
@@ -34,7 +34,7 @@
                 <hr>
                 <p>Generating a list of recommendations for a user based on a bipartite graph of users and their interests.</p>
             </div>
-            <a class="btn-primary" href="/demidova">Go &raquo;</a>
+            <a class="btn-primary" href="/CreatingRecommendationSystemTheory">Go &raquo;</a>
         </div>
         <div class="col">
             <div class="col-content">

@@ -1,7 +1,7 @@
 % rebase('layout.tpl', title='Theory Page', year=year)
 
 <div class="content">
-    <h1>Creating a recommendation system</h1>
+    <h1 class="topic-title">Creating a recommendation system</h1>
     <div class="text-block">
         <h2>Directed and Undirected Graphs</h2>
         <p>A graph is a mathematical structure consisting of a set of vertices and a set of edges connecting some pairs of vertices. Graphs are widely used in various fields, such as mathematics, computer science, and engineering, to model connections and interactions between objects.</p>

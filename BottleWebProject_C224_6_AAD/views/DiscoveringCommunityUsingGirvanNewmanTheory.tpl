@@ -1,10 +1,7 @@
 % rebase('layout.tpl', title='Theory Page', year=year)
 
 <div class="content">
-    <h1 class="topic-title">Discovering a Community using Girvan-Newman</h1>
-</div>
-
-<div class="content">
+    <h1>Discovering a Community using Girvan-Newman</h1>
     <div class="text-block">
 
         <h2>Community Analysis</h2>
