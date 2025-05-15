@@ -140,7 +140,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-## Built With
+## Сделано с помощью
 
 * Bottle - легкий WSGI веб-фреймворк для Python
 
