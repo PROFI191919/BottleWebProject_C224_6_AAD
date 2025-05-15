@@ -1,123 +1,152 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Analytics Dashboard</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
+% rebase('layout.tpl', title='Theory Page', year=year)
+
+<div class="content">
+    <h1 class="topic-title">LEARNING PATH CONSTRUCTION</h1>
+</div>
+
+<div class="content">
+    <div class="text-block">
+        <h2>Introduction</h2>
+        <p>When designing personalized education, it's important to consider dependencies between topics and their difficulty. We propose a method for constructing a learning path using a Directed Acyclic Graph (DAG), where nodes represent topics and edges represent prerequisites.</p>
+
+        <h2>Core Concepts</h2>
+        <h3>Educational Graph</h3>
+        <ul>
+            <li><strong>Topics (nodes):</strong> Individual learning modules or concepts</li>
+            <li><strong>Dependencies (edges):</strong> Connections between topics (A ? B means A must be studied before B)</li>
+            <li><strong>Topic difficulty:</strong> A numeric measure indicating the learning effort required</li>
+        </ul>
+
+        <h2>Learning Path Algorithm</h2>
+        <h3>Topological Sorting with Difficulty Consideration</h3>
+        <ol>
+            <li><strong>Initialization:</strong>
+                <ul>
+                    <li>Calculate in-degrees for all nodes</li>
+                    <li>Create a queue of topics with zero prerequisites</li>
+                </ul>
+            </li>
+            <li><strong>Processing:</strong>
+                <ul>
+                    <li>Extract the topic with the lowest difficulty from the queue</li>
+                    <li>Add it to the learning path</li>
+                    <li>Reduce dependency count for connected topics</li>
+                    <li>Add new zero-dependency topics to the queue</li>
+                </ul>
+            </li>
+            <li><strong>Repeat:</strong> Until all topics are processed</li>
+        </ol>
+
+    <h3>Python Implementation</h3>
+    <pre><code>def build_learning_path(graph):
+        in_degree = {topic: 0 for topic in graph}
+        queue = []
+        path = []
+
+        # Calculate in-degrees
+        for topic in graph:
+            for neighbor in graph[topic]["dependencies"]:
+                in_degree[neighbor] += 1
+
+        # Collect nodes with zero in-degree
+        for topic, degree in in_degree.items():
+            if degree == 0:
+                queue.append(topic)
+
+        # Sort queue by difficulty
+        queue.sort(key=lambda t: graph[t]["difficulty"])
+
+        while queue:
+            current = queue.pop(0)
+            path.append(current)
+
+            for neighbor in graph[current]["dependencies"]:
+                in_degree[neighbor] -= 1
+                if in_degree[neighbor] == 0:
+                    queue.append(neighbor)
+                    queue.sort(key=lambda t: graph[t]["difficulty"])  # Keep sorted by difficulty
+
+        return path
+
+    # Example usage:
+    graph = {
+        "Programming Basics": {"difficulty": 2, "dependencies": ["Algorithms", "OOP"]},
+        "Algorithms": {"difficulty": 3, "dependencies": ["Data Structures", "Sorting"]},
+        "OOP": {"difficulty": 3, "dependencies": ["Design Patterns"]},
+        "Data Structures": {"difficulty": 4, "dependencies": []},
+        "Sorting": {"difficulty": 3, "dependencies": []},
+        "Design Patterns": {"difficulty": 5, "dependencies": []},
     }
 
-    /* Горизонтальный синий бордер */
-    .top-bar {
-      background-color: #1e40af; /* насыщенный синий */
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    path = build_learning_path(graph)
+    print(path)
 
-    .top-bar h1 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
+}</code></pre>
 
-    .main-content {
-      display: flex;
-      flex: 1;
-    }
+        <h2>Key Characteristics of the Path</h2>
+        <ul>
+            <li><strong>Total difficulty:</strong> Sum of difficulties of all topics</li>
+            <li><strong>Peak load:</strong> Maximum difficulty among consecutive topics</li>
+            <li><strong>Load balance:</strong> How evenly difficulty is distributed</li>
+            <li><strong>Critical topics:</strong> Topics with the most dependencies</li>
+        </ul>
 
-    .sidebar {
-      background-color: #3b82f6; /* голубой оттенок */
-      padding: 20px;
-      width: 220px;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+        <h2>Relevant Topics</h2>
+        <ul>
+            <li>Topics with the highest number of outgoing connections (hubs)</li>
+            <li>Topics that require many prerequisites</li>
+            <li>Topics with high difficulty that influence many others</li>
+        </ul>
 
-    .sidebar button {
-      background-color: #60a5fa;
-      border: none;
-      padding: 10px;
-      color: white;
-      cursor: pointer;
-      text-align: left;
-      border-radius: 5px;
-    }
+        <h2>Practical Application</h2>
+        <p>This method can be applied on your educational platform:</p>
+        <ul>
+            <li><strong>Input:</strong> Database of topics with difficulty scores and dependency matrix</li>
+            <li><strong>Output:</strong> Personalized learning path</li>
+            <li><strong>Features:</strong> Graph visualization, learning time estimation, progress-based adjustment</li>
+        </ul>
 
-    .sidebar button:hover {
-      background-color: #2563eb;
-    }
+        <h2>Example</h2>
+        <p><strong>Topic Graph:</strong></p>
+        <ul>
+            <li>Programming Basics (difficulty 2) ? Algorithms (3) ? Data Structures (4)</li>
+            <li>Programming Basics ? OOP (3)</li>
+            <li>Algorithms ? Sorting (3)</li>
+            <li>OOP ? Design Patterns (5)</li>
+        </ul>
+        <p><strong>Optimal Path:</strong></p>
+        <ul>
+            <li>Programming Basics (2)</li>
+            <li>Algorithms (3) or OOP (3)</li>
+            <li>Data Structures (4) or Sorting (3)</li>
+            <li>Design Patterns (5)</li>
+        </ul>
 
-    .content {
-      flex: 1;
-      padding: 20px;
-    }
-
-    .charts-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .chart {
-      background-color: #f3f4f6;
-      padding: 10px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-    }
-
-    .chart-title {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="top-bar">
-    <h1>Crypto Analytics Dashboard</h1>
-    <div>User Menu</div>
-  </div>
-
-  <div class="main-content">
-    <div class="sidebar">
-      <button>Home</button>
-      <button>Financial Reports</button>
-      <button>Performance Trends</button>
-      <button>Security Status</button>
-      <button>Settings</button>
+        <h2>Conclusion</h2>
+        <p>This approach allows for creating effective educational trajectories considering both logical topic order and difficulty. It is especially useful for:</p>
+        <ul>
+            <li>Personalized learning</li>
+            <li>Adaptive educational systems</li>
+            <li>Curriculum planning</li>
+        </ul>
     </div>
+</div>
 
-    <div class="content">
-      <h2>Statistics Overview</h2>
-      <div class="charts-grid">
-        <div class="chart">
-          <div class="chart-title">Chart A</div>
-          <canvas id="chartA"></canvas>
-        </div>
-        <div class="chart">
-          <div class="chart-title">Chart B</div>
-          <canvas id="chartB"></canvas>
-        </div>
-        <div class="chart">
-          <div class="chart-title">Chart C</div>
-          <canvas id="chartC"></canvas>
-        </div>
-        <div class="chart">
-          <div class="chart-title">Chart D</div>
-          <canvas id="chartD"></canvas>
-        </div>
-      </div>
+<hr>
+
+<div class="content">
+    <div class="text-block">
+        <h2>Upload Your Topic Graph</h2>
+        <p>To calculate a personalized learning path, upload a JSON file describing your topic graph. The file should include topics, their difficulties, and dependencies.</p>
+
+        <form action="/calculate-path" method="post" enctype="multipart/form-data" class="form-block">
+            <label for="graphFile"><strong>Choose a JSON file:</strong></label><br>
+            <input type="file" id="graphFile" name="graphFile" accept=".json" required style="margin-top: 8px; margin-bottom: 16px;"><br>
+
+            <button type="submit" class="button-primary">Calculate</button>
+        </form>
+
+        <p class="note">After uploading, the system will process your data and display a personalized learning trajectory based on your file.</p>
     </div>
-  </div>
+</div>
 
-</body>
-</html>

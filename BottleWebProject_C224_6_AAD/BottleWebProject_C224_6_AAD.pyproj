@@ -74,7 +74,10 @@
     </Content>
     <Content Include="static\styles\index.css" />
     <Content Include="static\styles\sidebar.css" />
+    <Content Include="views\DiscoveringCommunityUsingGirvanNewmanDecision.tpl" />
     <Content Include="views\EducationalTrajectoryTheory.tpl" />
+    <Content Include="views\DiscoveringCommunityUsingGirvanNewmanTheory.tpl" />
+    <Content Include="views\CreatingRecommendationSystemTheory.tpl" />
     <Content Include="views\authors.tpl" />
     <Content Include="views\demidova.tpl" />
     <Content Include="views\index.tpl" />

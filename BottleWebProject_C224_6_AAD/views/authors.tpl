@@ -1,10 +1,9 @@
 % rebase('layout.tpl', title=title, year=year)
 
 <div class="content">
-    <h1>About authors</h1>
+    <h1 class="topic-title">About authors</h1>
     <div class="space-y-8">
 
-        <!-- Первый блок -->
         <div class="text-block">
             <div class="text-content">
                 <h2>About This Website</h2>
@@ -17,7 +16,6 @@
             </div>
         </div>
 
-        <!-- Второй блок -->
         <div class="text-block">
             <div class="text-content">
                 <h2>Early Career</h2>
@@ -30,7 +28,6 @@
             </div>
         </div>
 
-        <!-- Третий блок -->
         <div class="text-block">
             <div class="text-content">
                 <h2>Latest Projects</h2>
