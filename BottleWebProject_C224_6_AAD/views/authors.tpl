@@ -3,45 +3,87 @@
 <div class="content">
     <h1>About authors</h1>
     <div class="space-y-8">
-
-        <!-- Первый блок -->
         <div class="text-block">
-            <div class="text-content">
-                <h2>About This Website</h2>
-                <p>This website is dedicated to a great German musician. He became famous for his songs, and on this site, you can learn more about his biography, dive deeper into his work, and immerse yourself in the world of his music.</p>
-                <h3>Personal Insight</h3>
-                <p>"Minecraft has probably made the biggest change in my life so far, making me more social and even more famous in some ways. It's weird that Marcus Persson was prancing around in a chat room I used to attend and mentioned to me that he liked my music. The sandbox game he was developing interested me. And by golly, now I'm working on one of the most successful indie games of this year!"</p>
-            </div>
+           <div class="text-content">
+    <h2>Demidova Svetlana Dmitrievna</h2>
+    <p>The project leader is a talented web developer and designer, known for combining creative vision with technical expertise. She leads the team with passion and precision, creating visually appealing and user-friendly websites.</p>
+    <h3>Main Sections of the Project</h3>
+    <ul>
+        <li>Home Page</li>
+        <li>Theory of Recommendation System</li>
+        <li>Practical Module for Building a Recommendation System</li>
+        <li>Design of Web Site</li>
+    </ul>
+</div>
             <div class="image-container">
                 <img src="/static/images/Sveta.jpg" alt="Musician Image">
             </div>
         </div>
 
-        <!-- Второй блок -->
         <div class="text-block">
             <div class="text-content">
-                <h2>Early Career</h2>
-                <p>Explore the early years of his career, from his first performances to the breakthrough that launched him into stardom.</p>
-                <h3>First Gig</h3>
-                <p>"My first gig was in a small club, and I was nervous, but the crowd loved it!"</p>
+                <h2>Antonov Erik Evgenievich</h2>
+                <p>The backend developer is a skilled professional responsible for creating the server-side logic and database interactions. They ensure the seamless functioning of the application?s core features, focusing on performance, security, and data management.</p>
+                <h3>Main Sections of the Project</h3>
+                   <ul>
+                    <li>Authors Page</li>
+                    <li>Theory of Educational trajectory</li>
+                    <li>Practical Module for Building a Educational trajectory</li>
+                    <li>Backend part of WebSite</li>
+                 </ul>
             </div>
             <div class="image-container">
-                <img src="/static/images/Sveta.jpg" alt="Early Career">
+                <img src="/static/images/Antonov.jpg" alt="Early Career">
             </div>
         </div>
 
-        <!-- Третий блок -->
         <div class="text-block">
             <div class="text-content">
-                <h2>Latest Projects</h2>
-                <p>Discover his latest projects and collaborations that continue to shape the music industry.</p>
-                <h3>Current Work</h3>
-                <p>"Working on new music with global artists has been an incredible journey!"</p>
+                <h2>Andriyanov Andrey Alekseevich</h2>
+                <p>The developer is a highly skilled and dedicated professional, responsible for building and maintaining the core functionality of applications. They ensure smooth and efficient operation, prioritizing performance, security, and data integrity while collaborating closely with other team members.</p>
+                <h3>Main Sections of the Project</h3>
+                   <ul>
+                    <li>Navigation Panel</li>
+                    <li>Theory of Community Detection with the Girvan-Newman Algorithm</li>
+                    <li>Practical Module for Building a Community Detection with the Girvan-Newman Algorithm</li>
+                    <li>Sigma GAY</li>
+                 </ul>
             </div>
             <div class="image-container">
-                <img src="/static/images/Sveta.jpg" alt="Latest Projects">
+                <img src="/static/images/Andrey.jpg" alt="Latest Projects">
             </div>
         </div>
-
     </div>
 </div>
+
+<style>
+
+
+.text-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.text-content {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.image-container {
+    flex-shrink: 0;
+}
+
+.image-container img {
+    max-width: 180px;
+    height: auto;
+    object-fit: cover;
+    border: 4px solid #6a5acd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+</style>
