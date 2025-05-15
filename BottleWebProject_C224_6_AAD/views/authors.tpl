@@ -1,6 +1,6 @@
 % rebase('layout.tpl', title=title, year=year)
 
-<div class="content">
+<div class="content fade-in">
     <h1 class="topic-title">About authors</h1>
         <div class="text-block-authors">
            <div class="text-content-authors">

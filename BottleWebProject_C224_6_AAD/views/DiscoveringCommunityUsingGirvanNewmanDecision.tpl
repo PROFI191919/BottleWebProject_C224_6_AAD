@@ -1,6 +1,6 @@
 % rebase('layout.tpl', title='Theory Page', year=year)
 
-<div class="content">
+<div class="content fade-in">
     <div class="container">
       <div class="left-panel">
 

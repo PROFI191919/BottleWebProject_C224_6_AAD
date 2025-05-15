@@ -1,6 +1,6 @@
 % rebase('layout.tpl', title='Home Page', year=year)
 
-<div class="content">
+<div class="content  fade-in">
     <h1>Directed and Undirected Graphs. Weighted Graphs.<br>Bipartite Graphs</h1>
     <div class="text-block">
         <h2>Directed and Undirected Graphs</h2>
