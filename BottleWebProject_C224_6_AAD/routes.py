@@ -24,16 +24,6 @@ def authors():
         year=datetime.now().year
     )
 
-@route('/demidova')
-@view('demidova')
-def demidova():
-    """Renders the about page."""
-    return dict(
-        title='Recommendation systems',
-        message='Your application description page.',
-        year=datetime.now().year
-    )
-
 @route('/EducationalTrajectoryTheory')
 @view('EducationalTrajectoryTheory')
 def EducationalTrajectoryTheory():

@@ -1,10 +1,7 @@
 % rebase('layout.tpl', title='Recommendation Systems Theory', year=year)
 
 <div class="content">
-    <h1 class="topic-title">Recommendation Systems Based on Preference Graphs</h1>
-</div>
-
-<div class="content">
+    <h1>Creating a recommendation system</h1>
     <div class="text-block">
 
         <h2>Introduction</h2>

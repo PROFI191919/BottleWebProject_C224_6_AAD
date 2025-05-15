@@ -18,7 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>BottleWebProject_C224_6_AAD</Name>
     <RootNamespace>BottleWebProject_C224_6_AAD</RootNamespace>
-    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,10 +50,10 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\images\Andrey.jpg" />
+    <Content Include="static\images\Antonov.jpg" />
+    <Content Include="static\images\Erik.jpg" />
     <Content Include="static\images\Sveta.jpg" />
-    <Content Include="static\images\Svetik.jpg" />
-    <Content Include="static\images\Svetlana.jpg" />
-    <Content Include="static\images\Svetlanka.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\girvan-newman.js" />
@@ -70,17 +70,12 @@
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="static\scripts\_references.js" />
-    <Content Include="static\styles\authors.css">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="static\styles\index.css" />
     <Content Include="static\styles\sidebar.css" />
     <Content Include="views\DiscoveringCommunityUsingGirvanNewmanDecision.tpl" />
     <Content Include="views\EducationalTrajectoryTheory.tpl" />
     <Content Include="views\DiscoveringCommunityUsingGirvanNewmanTheory.tpl" />
     <Content Include="views\CreatingRecommendationSystemTheory.tpl" />
     <Content Include="views\authors.tpl" />
-    <Content Include="views\demidova.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
   </ItemGroup>

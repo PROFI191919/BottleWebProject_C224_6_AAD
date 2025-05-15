@@ -4,7 +4,6 @@
     <h1 class="topic-title">Discovering a Community using Girvan-Newman</h1>
 </div>
 
-
 <div class="content">
     <div class="text-block">
 
@@ -138,11 +137,8 @@
 
     <div id="adjacencyMatrixForm" style="margin-top: 20px; display: none;">
       <div id="matrixContainer"></div>
-      <form id="calculationForm" action="/DiscoveringCommunityUsingGirvanNewmanDecision" style="margin-top: 20px;">
-        <button type="button" id="changeMatrixSize" class="button-primary" style="margin-right: 10px;">Change Matrix Size</button>
-        <button type="submit" class="button-primary">Calculate</button>
-      </form>
-    </div>
+      <button type="submit" class="button-primary" style="margin-top: 10px;">Calculate</button>
+    </form>
   </div>
 </div>
 

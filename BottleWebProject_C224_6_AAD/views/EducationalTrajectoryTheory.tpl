@@ -1,10 +1,8 @@
 % rebase('layout.tpl', title='Theory Page', year=year)
 
-<div class="content">
-    <h1 class="topic-title">LEARNING PATH CONSTRUCTION</h1>
-</div>
+<div class="content fade-in">
+    <h1>Learning path construction</h1>
 
-<div class="content">
     <div class="text-block">
         <h2>Introduction</h2>
         <p>When designing personalized education, it's important to consider dependencies between topics and their difficulty. We propose a method for constructing a learning path using a Directed Acyclic Graph (DAG), where nodes represent topics and edges represent prerequisites.</p>
@@ -143,7 +141,7 @@
             <label for="graphFile"><strong>Choose a JSON file:</strong></label><br>
             <input type="file" id="graphFile" name="graphFile" accept=".json" required style="margin-top: 8px; margin-bottom: 16px;"><br>
 
-            <button type="submit" class="button-primary">Calculate</button>
+            <button type="submit" class="btn-calc">Calculate</button>
         </form>
 
         <p class="note">After uploading, the system will process your data and display a personalized learning trajectory based on your file.</p>
