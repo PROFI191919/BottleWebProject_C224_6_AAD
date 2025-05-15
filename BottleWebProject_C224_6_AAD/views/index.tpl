@@ -20,18 +20,22 @@
             <h2>Educational trajectory</h2>
             <hr>
             <p>Construction of the optimal educational trajectory demonstrating the route sheet of the learner's training based on the initial graph.</p>
-            <a class="btn-primary" href="/EducationalTrajectoryTheory">Go &raquo;</a>
+            <a class="btn-primary" href="/antonov">Go &raquo;</a>
         </div>
         <div class="col">
-            <h2>Recommendation system</h2>
-            <hr>
-            <p>Generating a list of recommendations for a user based on a bipartite graph of users and their interests.</p>
+            <div class="col-content">
+                <h2>Recommendation system</h2>
+                <hr>
+                <p>Generating a list of recommendations for a user based on a bipartite graph of users and their interests.</p>
+            </div>
             <a class="btn-primary" href="/demidova">Go &raquo;</a>
         </div>
         <div class="col">
-            <h2>Community discovery</h2>
-            <hr>
-            <p>Community detection in graphs using the Girvan-Newman algorithm. The trajectory determines the order of learning topics.</p>
+            <div class="col-content">
+                <h2>Community discovery</h2>
+                <hr>
+                <p>Community detection in graphs using the Girvan-Newman algorithm. The trajectory determines the order of learning topics.</p>
+            </div>
             <a class="btn-primary" href="/andriyanov">Go &raquo;</a>
         </div>
     </div>
