@@ -20,7 +20,7 @@
             </div>
 
             <div class="image-container">
-                <img src="/static/images/Sveta.jpg" alt="Sveta Demidova Image">
+                <img src="/static/images/Sveta.jpg" alt="Sveta Demidova">
             </div>
         </div>
 
@@ -41,7 +41,7 @@
                  </ul>
             </div>
             <div class="image-container">
-                <img src="/static/images/Antonov.jpg" alt="Erik Antonov Image">
+                <img src="/static/images/Antonov.jpg" alt="Erik Antonov">
             </div>
         </div>
 
@@ -62,7 +62,7 @@
                  </ul>
             </div>
             <div class="image-container">
-                <img src="/static/images/Andrey.jpg" alt="Andrey Andriyanov Image">
+                <img src="/static/images/Andrey.jpg" alt="Andrey Andriyanov">
             </div>
         </div>
 </div>
