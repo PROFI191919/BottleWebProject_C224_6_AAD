@@ -1,6 +1,6 @@
-# GraphLab Website
+# Graph Analysis Website
 
-GraphLab is a multi-page educational web application built on the Bottle framework, designed to help users understand and interact with graph theory algorithms and concepts through hands-on implementation.
+Graph Analysis is a multi-page educational web application built on the Bottle framework, designed to help users understand and interact with graph theory algorithms and concepts through hands-on implementation.
 
 ## Features
 
