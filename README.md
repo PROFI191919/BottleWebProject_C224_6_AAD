@@ -117,28 +117,28 @@ Graph Analysis - это многостраничное образователь�
 
 1. Клонируйте репозиторий:
 
-``bash
+```bash
 git clone https://github.com/PROFI191919/BottleWebProject_C224_6_AAD.git
 ```
 
 2. Создайте и активируйте виртуальную среду:
 
-``bash
+```bash
 python3 -m venv env
 source env/bin/activate # В Windows: env\Scripts\activate
 ```
 
 3. Установите необходимые зависимости:
 
-``bash
+```bash
 pip install -r requirements.txt
-``
+```
 
 4. Запустите приложение:
 
-``bash
+```bash
 python app.py
-``
+```
 
 ## Built With
 
