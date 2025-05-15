@@ -1,7 +1,7 @@
 % rebase('layout.tpl', title=title, year=year)
 
 <div class="content">
-    <h1>About authors</h1>
+    <h1 class="topic-title">About authors</h1>
         <div class="text-block-authors">
            <div class="text-content-authors">
                 <h2>Demidova Svetlana Dmitrievna</h2>

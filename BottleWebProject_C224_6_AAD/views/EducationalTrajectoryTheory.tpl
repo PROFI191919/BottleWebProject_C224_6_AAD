@@ -1,10 +1,8 @@
 % rebase('layout.tpl', title='Theory Page', year=year)
 
 <div class="content">
-    <h1 class="topic-title">LEARNING PATH CONSTRUCTION</h1>
-</div>
+    <h1>Learning path construction</h1>
 
-<div class="content">
     <div class="text-block">
         <h2>Introduction</h2>
         <p>When designing personalized education, it's important to consider dependencies between topics and their difficulty. We propose a method for constructing a learning path using a Directed Acyclic Graph (DAG), where nodes represent topics and edges represent prerequisites.</p>

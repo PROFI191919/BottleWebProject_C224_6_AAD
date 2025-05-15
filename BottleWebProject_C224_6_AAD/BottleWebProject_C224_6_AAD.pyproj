@@ -18,7 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>BottleWebProject_C224_6_AAD</Name>
     <RootNamespace>BottleWebProject_C224_6_AAD</RootNamespace>
-    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -76,7 +76,6 @@
     <Content Include="views\DiscoveringCommunityUsingGirvanNewmanTheory.tpl" />
     <Content Include="views\CreatingRecommendationSystemTheory.tpl" />
     <Content Include="views\authors.tpl" />
-    <Content Include="views\demidova.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
   </ItemGroup>
