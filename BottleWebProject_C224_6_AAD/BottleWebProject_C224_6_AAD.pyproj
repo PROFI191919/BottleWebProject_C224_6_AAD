@@ -50,10 +50,10 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\images\Andrey.jpg" />
+    <Content Include="static\images\Antonov.jpg" />
+    <Content Include="static\images\Erik.jpg" />
     <Content Include="static\images\Sveta.jpg" />
-    <Content Include="static\images\Svetik.jpg" />
-    <Content Include="static\images\Svetlana.jpg" />
-    <Content Include="static\images\Svetlanka.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
@@ -69,17 +69,34 @@
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="static\scripts\_references.js" />
-    <Content Include="static\styles\authors.css">
-      <SubType>Code</SubType>
-    </Content>
-    <Content Include="static\styles\index.css" />
     <Content Include="static\styles\sidebar.css" />
+    <Content Include="views\DiscoveringCommunityUsingGirvanNewmanDecision.tpl" />
+    <Content Include="views\EducationalTrajectoryTheory.tpl" />
+    <Content Include="views\DiscoveringCommunityUsingGirvanNewmanTheory.tpl" />
+    <Content Include="views\CreatingRecommendationSystemTheory.tpl" />
     <Content Include="views\authors.tpl" />
-    <Content Include="views\demidova.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
   </ItemGroup>
   <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>3.6</Version>
+      <Description>env1 (Python 3.6 (32-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
+    <Interpreter Include="env2\">
+      <Id>env2</Id>
+      <Version>3.9</Version>
+      <Description>env2 (Python 3.9 (32-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
       <Version>3.9</Version>

@@ -6,7 +6,6 @@
     <title>{{ title }} - Graph Analysis</title>
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/styles/sidebar.css" />
-    <link rel="stylesheet" type="text/css" href="/static/styles/authors.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
 </head>
 
@@ -17,9 +16,9 @@
     </div>
     <ul class="sidebar-menu">
         <li><a href="/home">Home</a></li>
-        <li><a href="/antonov">Educational trajectory</a></li>
-        <li><a href="/demidova">Recommendation systems</a></li>
-        <li><a href="/andriyanov">Community discovery</a></li>
+        <li><a href="/EducationalTrajectoryTheory">Educational trajectory</a></li>
+        <li><a href="/CreatingRecommendationSystemTheory">Recommendation systems</a></li>
+        <li><a href="/DiscoveringCommunityUsingGirvanNewmanTheory">Community discovery</a></li>
         <li><a href="/authors">Authors</a></li>
     </ul>
 </div>
