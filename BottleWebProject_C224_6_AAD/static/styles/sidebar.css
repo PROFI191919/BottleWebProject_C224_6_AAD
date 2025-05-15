@@ -246,3 +246,41 @@ footer {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.file-upload input {
+    display: none;
+}
+
+.btn-file {
+    background-color: white;
+    color: #3f4ec1;
+    border: 2px solid #3f4ec1;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 250px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-file:hover {
+    background-color: #f0f2ff;
+    color: #2e3ac1;
+}
+
+.file-name {
+    font-size: 15px;
+    color: #444;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}

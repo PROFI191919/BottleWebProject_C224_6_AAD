@@ -139,7 +139,13 @@
 
         <form action="/calculate-path" method="post" enctype="multipart/form-data" class="form-block">
             <label for="graphFile"><strong>Choose a JSON file:</strong></label><br>
-            <input type="file" id="graphFile" name="graphFile" accept=".json" required style="margin-top: 8px; margin-bottom: 16px;"><br>
+
+            <div class="file-upload">
+                <input type="file" id="graphFile" name="graphFile" accept=".json">
+
+                <button type="button" id="customFileButton" class="btn-file" onclick="document.getElementById('graphFile').click()">Select File</button>
+                <span id="fileName" class="file-name">No file selected</span>
+            </div>
 
             <button type="submit" class="btn-calc">Calculate</button>
         </form>
@@ -147,4 +153,6 @@
         <p class="note">After uploading, the system will process your data and display a personalized learning trajectory based on your file.</p>
     </div>
 </div>
+
+<script src="/static/scripts/showFileName.js"></script>
 
