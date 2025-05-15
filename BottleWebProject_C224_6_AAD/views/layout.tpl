@@ -6,7 +6,6 @@
     <title>{{ title }} - Graph Analysis</title>
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/styles/sidebar.css" />
-    <link rel="stylesheet" type="text/css" href="/static/styles/authors.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
 </head>
 

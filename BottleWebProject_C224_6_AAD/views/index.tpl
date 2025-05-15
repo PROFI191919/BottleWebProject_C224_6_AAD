@@ -4,7 +4,11 @@
     <h1>Directed and Undirected Graphs. Weighted Graphs. Bipartite Graphs</h1>
     <div class="text-block">
         <h2>Directed and Undirected Graphs</h2>
-        <p>A graph is a mathematical structure consisting of a set of vertices and a set of edges connecting some pairs of vertices. Graphs are widely used in various fields, such as mathematics, computer science, and engineering, to model connections and interactions between objects.</p>
+        <p>
+            A graph is a mathematical structure consisting of a set of vertices and a set of edges
+            connecting some pairs of vertices. Graphs are widely used in various fields, such as mathematics,
+            computer science, and engineering, to model connections and interactions between objects.
+        </p>
         <h3>Directed Graph</h3>
         <p>A directed graph (digraph) is a graph where each edge has a direction assigned to it. The edges of a directed graph are called arcs.</p>
         <h3>Undirected Graph</h3>
@@ -20,7 +24,7 @@
             <div class="col-content">
                 <h2>Educational trajectory</h2>
                 <hr>
-                <p>Construction of the optimal educational trajectory demonstrating the route sheet of the learner's training based on the initial graph.</p>
+                <p>route sheet of the learner's training based on the initial graph.</p>
             </div>
             <a class="btn-primary" href="/antonov">Go &raquo;</a>
         </div>
