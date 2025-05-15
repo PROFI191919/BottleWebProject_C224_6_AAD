@@ -33,3 +33,43 @@ def demidova():
         message='Your application description page.',
         year=datetime.now().year
     )
+
+@route('/EducationalTrajectoryTheory')
+@view('EducationalTrajectoryTheory')
+def EducationalTrajectoryTheory():
+    """Renders the recommendation systems page."""
+    return dict(
+        title='Recommendation systems',
+        message='Your application description page.',
+        year=datetime.now().year
+    )
+
+@route('/CreatingRecommendationSystemTheory')
+@view('CreatingRecommendationSystemTheory')
+def CreatingRecommendationSystemTheory():
+    """Renders the recommendation systems page."""
+    return dict(
+        title='Recommendation systems',
+        message='Your application description page.',
+        year=datetime.now().year
+    )
+
+@route('/DiscoveringCommunityUsingGirvanNewmanTheory')
+@view('DiscoveringCommunityUsingGirvanNewmanTheory')
+def DiscoveringCommunityUsingGirvanNewmanTheory():
+    """Renders the recommendation systems page."""
+    return dict(
+        title='Recommendation systems',
+        message='Your application description page.',
+        year=datetime.now().year
+    )
+
+@route('/DiscoveringCommunityUsingGirvanNewmanDecision')
+@view('DiscoveringCommunityUsingGirvanNewmanDecision')
+def DiscoveringCommunityUsingGirvanNewmanDecision():
+    """Renders the recommendation systems page."""
+    return dict(
+        title='Recommendation systems',
+        message='Your application description page.',
+        year=datetime.now().year
+    )

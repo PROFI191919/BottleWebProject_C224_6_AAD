@@ -18,6 +18,7 @@
                     <li>Design of Web Site</li>
                 </ul>
             </div>
+
             <div class="image-container">
                 <img src="/static/images/Sveta.jpg" alt="Sveta Demidova Image">
             </div>

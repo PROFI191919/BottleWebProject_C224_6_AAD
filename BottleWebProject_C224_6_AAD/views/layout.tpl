@@ -16,9 +16,9 @@
     </div>
     <ul class="sidebar-menu">
         <li><a href="/home">Home</a></li>
-        <li><a href="/antonov">Educational trajectory</a></li>
-        <li><a href="/demidova">Recommendation systems</a></li>
-        <li><a href="/andriyanov">Community discovery</a></li>
+        <li><a href="/EducationalTrajectoryTheory">Educational trajectory</a></li>
+        <li><a href="/CreatingRecommendationSystemTheory">Recommendation systems</a></li>
+        <li><a href="/DiscoveringCommunityUsingGirvanNewmanTheory">Community discovery</a></li>
         <li><a href="/authors">Authors</a></li>
     </ul>
 </div>

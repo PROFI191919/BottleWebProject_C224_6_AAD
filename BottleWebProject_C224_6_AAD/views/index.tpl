@@ -1,7 +1,7 @@
 % rebase('layout.tpl', title='Home Page', year=year)
 
 <div class="content">
-    <h1>Directed and Undirected Graphs. Weighted Graphs. Bipartite Graphs</h1>
+    <h1 class="topic-title">Directed and Undirected Graphs. Weighted Graphs. Bipartite Graphs</h1>
     <div class="text-block">
         <h2>Directed and Undirected Graphs</h2>
         <p>
@@ -42,7 +42,7 @@
                 <hr>
                 <p>Community detection in graphs using the Girvan-Newman algorithm. The trajectory determines the order of learning topics.</p>
             </div>
-            <a class="btn-primary" href="/andriyanov">Go &raquo;</a>
+            <a class="btn-primary" href="/DiscoveringCommunityUsingGirvanNewmanTheory">Go &raquo;</a>
         </div>
     </div>
 </div>

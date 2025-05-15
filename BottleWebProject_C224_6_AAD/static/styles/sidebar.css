@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #d8ccf3; /*#f0f0f0;*/
+    background-color: #d8ccf3; /* сиреневый фон */ /*#f0f0f0;*/
 }
 
 .sidebar {
@@ -11,8 +11,7 @@ body {
     width: 250px;
     height: 100vh;
     background-color: #3f4ec1;
-    /*#3f4ec1;*/
-    color: white; /*#ecf0f1;*/
+    color: white;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
@@ -29,7 +28,7 @@ body {
 }
 
 .sidebar-menu li {
-    margin: 15px;/* 0;*/
+    margin: 15px;
 }
 
 .sidebar-menu a {
@@ -43,13 +42,13 @@ body {
 }
 
 .sidebar-menu a:hover {
-    background-color: #7483f3;/*#34495e;*/
+    background-color: #7483f3;
 }
 
 .content {
     margin-left: 125px;
     padding: 10px 15px;
-    background-color: #d8ccf3;
+    background-color: #d8ccf3; /* сиреневый фон */
 }
 
 .text-block {
@@ -121,7 +120,7 @@ footer {
     display: flex;
     gap: 30px;
     margin-top: 40px;
-    align-items: stretch;
+    align-items: stretch; /* Все колонки одинаковой высоты */
 }
 
 .col {
@@ -136,7 +135,7 @@ footer {
 }
 
 .col-content {
-    flex-grow: 1;
+    flex-grow: 1; /* Занимает всё доступное место, толкая кнопку вниз */
 }
 
 
@@ -150,7 +149,7 @@ footer {
 }
 
 .col h2 {
-    all: unset;
+    all: unset; /* сбросить всё унаследованное */
     margin-top: 0;
     color: #2c2c54;
     font-size: 22px; 
@@ -187,11 +186,36 @@ footer {
 .text-content-authors {
     flex: 1;
     margin-right: 20px;
+
+.topic-title {
+    font-size: 36px;
+    margin: 0 0 10px;
+    color: #fff;
+    text-transform: uppercase;
 }
 
-.image-container {
-    flex-shrink: 0;
+.form-block {
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
+
+.button-primary {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    background-color: #3f4ec1;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.button-primary:hover {
+    background-color: #5a67dd;
+    text-decoration: none;
+}
+
 
 .image-container img {
     max-width: 180px;
