@@ -53,6 +53,7 @@
     <Content Include="static\images\Andrey.jpg" />
     <Content Include="static\images\Antonov.jpg" />
     <Content Include="static\images\Erik.jpg" />
+    <Content Include="static\images\logo.png" />
     <Content Include="static\images\Sveta.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />

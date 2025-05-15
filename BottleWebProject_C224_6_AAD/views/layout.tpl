@@ -21,6 +21,8 @@
         <li><a href="/DiscoveringCommunityUsingGirvanNewmanTheory">Community discovery</a></li>
         <li><a href="/authors">Authors</a></li>
     </ul>
+    <!--<img src="/static/images/fon1.png" alt="Logotip" class="sidebar-logo"/>-->
+    <img src="/static/images/logo.png" alt="Logotip" class="sidebar-logo"/>
 </div>
 
 <div class="content">
