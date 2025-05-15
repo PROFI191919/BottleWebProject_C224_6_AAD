@@ -1,6 +1,6 @@
 % rebase('layout.tpl', title='Home Page', year=year)
 
-<div class="content  fade-in">
+<div class="content fade-in">
     <h1>Directed and Undirected Graphs. Weighted Graphs.<br>Bipartite Graphs</h1>
     <div class="text-block">
         <h2>Directed and Undirected Graphs</h2>
@@ -24,9 +24,12 @@
             <div class="col-content">
                 <h2>Educational trajectory</h2>
                 <hr>
-                <p>route sheet of the learner's training based on the initial graph.</p>
+                <p>
+                    Construction of the optimal educational trajectory demonstrating the route sheet
+                    of the learner's training based on the initial graph.
+                </p>
             </div>
-            <a class="btn-primary" href="/EducationalTrajectoryTheory">Go &raquo;</a>
+            <a class="btn-go" href="/EducationalTrajectoryTheory">Go &raquo;</a>
         </div>
         <div class="col">
             <div class="col-content">
@@ -34,7 +37,7 @@
                 <hr>
                 <p>Generating a list of recommendations for a user based on a bipartite graph of users and their interests.</p>
             </div>
-            <a class="btn-primary" href="/CreatingRecommendationSystemTheory">Go &raquo;</a>
+            <a class="btn-go" href="/CreatingRecommendationSystemTheory">Go &raquo;</a>
         </div>
         <div class="col">
             <div class="col-content">
@@ -42,7 +45,7 @@
                 <hr>
                 <p>Community detection in graphs using the Girvan-Newman algorithm. The trajectory determines the order of learning topics.</p>
             </div>
-            <a class="btn-primary" href="/DiscoveringCommunityUsingGirvanNewmanTheory">Go &raquo;</a>
+            <a class="btn-go" href="/DiscoveringCommunityUsingGirvanNewmanTheory">Go &raquo;</a>
         </div>
     </div>
 </div>
