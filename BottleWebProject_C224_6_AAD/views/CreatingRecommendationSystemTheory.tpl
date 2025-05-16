@@ -169,9 +169,9 @@
         <button class="btn-calc" onclick="generateMatrix()">Generate</button>
         <button class="btn-calc" onclick="fillRandom()">Fill Random</button>
 
-        <form action="/CreatingRecommendationSystemDecision" id="ratingMatrixForm" style="margin-top: 16px;">
+        <form action="/CreatingRecommendationSystemDecision" id="ratingMatrixForm" class="matrix-form">
             <div id="tableContainer"></div>
-            <button type="submit" class="btn-calc" style="margin-top: 16px;">Calculate</button>
+            <button type="submit" class="btn-calc">Calculate</button>
         </form>
     </div>
 </div>
