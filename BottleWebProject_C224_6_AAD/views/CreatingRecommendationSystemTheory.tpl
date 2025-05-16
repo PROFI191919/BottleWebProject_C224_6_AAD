@@ -1,5 +1,4 @@
 % rebase('layout.tpl', title='Recommendation Systems Theory', year=year)
-
 <div class="content fade-in">
     <h1>Creating a recommendation system</h1>
     <div class="text-block">
@@ -155,8 +154,12 @@
         <h2>Rating Matrix Demo</h2>
         <p>Set the size of the rating matrix and assign ratings from 1 to 5:</p>
 
-        <label for="matrixSize">Size (n):</label>
-        <input type="number" id="matrixSize" min="1" max="10" value="4">
+        <label for="numUsers">Number of Users (M):</label>
+        <input type="number" id="numUsers" min="1" max="10" value="4" required>
+
+        <label for="numItems">Number of Items (N):</label>
+        <input type="number" id="numItems" min="1" max="10" value="5" required>
+
         <button class="btn-calc" onclick="generateMatrix()">Generate</button>
         <button class="btn-calc" onclick="fillRandom()">Fill Random</button>
 

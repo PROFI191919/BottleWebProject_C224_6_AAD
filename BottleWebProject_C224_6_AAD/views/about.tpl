@@ -53,7 +53,6 @@
                     <li>Navigation Panel</li>
                     <li>Theory of Community Detection with the Girvan-Newman Algorithm</li>
                     <li>Practical Module for Building a Community Detection with the Girvan-Newman Algorithm</li>
-                    <li>Sigma GAY</li>
                  </ul>
             </div>
             <div class="image-container">
