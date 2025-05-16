@@ -137,14 +137,16 @@
         <h2>Upload Your Topic Graph</h2>
         <p>To calculate a personalized learning path, upload a JSON file describing your topic graph. The file should include topics, their difficulties, and dependencies.</p>
 
-        <form action="/calculate-path" method="post" enctype="multipart/form-data" class="form-block">
+        <form action="/EducationalTrajectoryTheoryDecision" enctype="multipart/form-data" class="form-block" style="margin-bottom: 0;">
             <label for="graphFile"><strong>Choose a JSON file:</strong></label><br>
             <input type="file" id="graphFile" name="graphFile" accept=".json" required style="margin-top: 8px; margin-bottom: 16px;"><br>
 
-            <button type="submit" class="btn-calc">Calculate</button>
-        </form>
+            <p class="note" style="margin-bottom: 12px;">After uploading, the system will process your data and display a personalized learning trajectory based on your file.</p>
 
-        <p class="note">After uploading, the system will process your data and display a personalized learning trajectory based on your file.</p>
+            <button type="submit" class="btn-calc" style="margin-bottom: 0;">Calculate</button>
+        </form>
     </div>
 </div>
 
+
+<script src="/static/scripts/showFileName.js"></script>

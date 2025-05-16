@@ -2,25 +2,22 @@
 
 <div class="content fade-in">
     <h1 class="topic-title">About authors</h1>
-        <div class="text-block-authors">
-           <div class="text-content-authors">
-                <h2>Demidova Svetlana Dmitrievna</h2>
-                <p>
-                    The project leader is a talented web developer and designer, known for combining creative
-                    vision with technical expertise. She leads the team with passion and precision, creating
-                    visually appealing and user-friendly websites.
-                </p>
-                <h3>Main Sections of the Project</h3>
-                <ul>
-                    <li>Home Page</li>
-                    <li>Theory of Recommendation System</li>
-                    <li>Practical Module for Building a Recommendation System</li>
-                    <li>Design of Web Site</li>
-                </ul>
-            </div>
+    <div class="space-y-8">
 
+        <div class="text-block">
+           <div class="text-content">
+    <h2>Demidova Svetlana Dmitrievna</h2>
+    <p>The project leader is a talented web developer and designer, known for combining creative vision with technical expertise. She leads the team with passion and precision, creating visually appealing and user-friendly websites.</p>
+    <h3>Main Sections of the Project</h3>
+    <ul>
+        <li>Home Page</li>
+        <li>Theory of Recommendation System</li>
+        <li>Practical Module for Building a Recommendation System</li>
+        <li>Design of Web Site</li>
+    </ul>
+</div>
             <div class="image-container">
-                <img src="/static/images/Sveta.jpg" alt="Sveta Demidova Image">
+                <img src="/static/images/Sveta.jpg" alt="Sveta Demidova">
             </div>
         </div>
 
@@ -41,7 +38,7 @@
                  </ul>
             </div>
             <div class="image-container">
-                <img src="/static/images/Antonov.jpg" alt="Erik Antonov Image">
+                <img src="/static/images/Antonov.jpg" alt="Erik Antonov">
             </div>
         </div>
 
@@ -55,14 +52,14 @@
                 </p>
                 <h3>Main Sections of the Project</h3>
                    <ul>
-                       <li>Navigation Panel</li>
-                       <li>Theory of Community Detection with the Girvan-Newman Algorithm</li>
-                       <li>Practical Module for Building a Community Detection with the Girvan-Newman Algorithm</li>
-                       <li>Sigma GAY</li>
+                    <li>Navigation Panel</li>
+                    <li>Theory of Community Detection with the Girvan-Newman Algorithm</li>
+                    <li>Practical Module for Building a Community Detection with the Girvan-Newman Algorithm</li>
+                    <li>Sigma GAY</li>
                  </ul>
             </div>
             <div class="image-container">
-                <img src="/static/images/Andrey.jpg" alt="Andrey Andriyanov Image">
+                <img src="/static/images/Andrey.jpg" alt="Andrey Andriyanov">
             </div>
         </div>
 </div>
