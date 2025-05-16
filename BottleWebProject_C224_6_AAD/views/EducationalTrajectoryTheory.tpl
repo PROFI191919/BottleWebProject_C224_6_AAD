@@ -2,6 +2,10 @@
 
 <div class="content fade-in">
     <h1>Learning path construction</h1>
+    <div class="skip-theory">
+        <h3>Don't want to learn the theory?</h3>
+        <a href="#calculator">Go straight to the calculator &rarr;</a>
+    </div>
 
     <div class="text-block">
         <h2>Introduction</h2>
@@ -132,7 +136,7 @@
 
 <hr>
 
-<div class="content">
+<div class="content" id="calculator">
     <div class="text-block">
         <h2>Upload Your Topic Graph</h2>
         <p>To calculate a personalized learning path, upload a JSON file describing your topic graph. The file should include topics, their difficulties, and dependencies.</p>
