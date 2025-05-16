@@ -1,6 +1,12 @@
 % rebase('layout.tpl', title='Recommendation Systems Theory', year=year)
+<
 <div class="content fade-in">
     <h1>Creating a recommendation system</h1>
+    <div class="skip-theory">
+        <h3>Don't want to learn the theory?</h3>
+        <a href="#calculator">Go straight to the calculator &rarr;</a>
+    </div>
+
     <div class="text-block">
 
         <h2>Introduction</h2>
@@ -149,7 +155,7 @@
 
 <hr>
 
-<div class="content">
+<div class="content" id="calculator">
     <div class="text-block">
         <h2>Rating Matrix Demo</h2>
         <p>Set the size of the rating matrix and assign ratings from 1 to 5:</p>

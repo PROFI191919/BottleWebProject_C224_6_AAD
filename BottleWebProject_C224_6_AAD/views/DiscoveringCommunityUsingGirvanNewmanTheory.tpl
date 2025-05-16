@@ -1,7 +1,11 @@
 % rebase('layout.tpl', title='Theory Page', year=year)
 
 <div class="content fade-in">
-    <h1 class="topic-title">Discovering a Community using Girvan-Newman</h1>
+    <h1>Discovering a Community using Girvan-Newman</h1>
+    <div class="skip-theory">
+        <h3>Don't want to learn the theory?</h3>
+        <a href="#calculator">Go straight to the calculator &rarr;</a>
+    </div>
 
     <div class="text-block">
 
@@ -123,7 +127,7 @@
 
 <hr>
 
-<div class="content">
+<div class="content" id="calculator">
   <div class="text-block">
     <h2>Enter Graph Data</h2>
     <p>Set the size of the adjacency matrix and specify connections between nodes by checking the boxes. The graph is undirected, so the matrix is symmetric.</p>
