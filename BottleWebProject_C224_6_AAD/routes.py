@@ -34,9 +34,9 @@ def EducationalTrajectoryTheory():
         year=datetime.now().year
     )
 
-@route('/EducationalTrajectoryTheoryDecision')
-@view('EducationalTrajectoryTheoryDecision')
-def EducationalTrajectoryTheoryDecision():
+@route('/EducationalTrajectoryDecision')
+@view('EducationalTrajectoryDecision')
+def EducationalTrajectoryDecision():
     """Renders the recommendation systems page."""
     return dict(
         title='Recommendation systems',

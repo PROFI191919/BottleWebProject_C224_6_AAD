@@ -222,6 +222,7 @@ footer {
 }
 
 .btn-calc:hover {
+    color: white;
     background-color: #5a67dd;
     text-decoration: none;
 }

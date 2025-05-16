@@ -137,7 +137,7 @@
         <h2>Upload Your Topic Graph</h2>
         <p>To calculate a personalized learning path, upload a JSON file describing your topic graph. The file should include topics, their difficulties, and dependencies.</p>
 
-        <form action="/EducationalTrajectoryTheoryDecision" enctype="multipart/form-data" class="form-block" style="margin-bottom: 0;">
+        <form action="/EducationalTrajectoryDecision" enctype="multipart/form-data" class="form-block" style="margin-bottom: 0;">
             <label for="graphFile"><strong>Choose a JSON file:</strong></label><br>
             <input type="file" id="graphFile" name="graphFile" accept=".json" required style="margin-top: 8px; margin-bottom: 16px;"><br>
 

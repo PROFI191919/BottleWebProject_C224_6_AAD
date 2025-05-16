@@ -1,6 +1,8 @@
 % rebase('layout.tpl', title='Theory Page', year=year)
 
 <div class="content fade-in">
+    <a href="/DiscoveringCommunityUsingGirvanNewmanTheory" class="btn-calc" style="btn-calc">&#8592; Back to Theory</a>
+
     <div class="container">
       <div class="left-panel">
 
