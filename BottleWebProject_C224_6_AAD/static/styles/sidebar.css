@@ -227,7 +227,7 @@ footer {
 }
 
 .image-container img {
-    max-width: 180px;
+    max-width: 150px;
     height: auto;
     border: 4px solid #9370D8;
     border-radius: 10px;
