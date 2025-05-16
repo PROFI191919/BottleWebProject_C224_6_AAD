@@ -81,8 +81,8 @@
 
         <h2>Example</h2>
         <p><strong>Initial Graph:</strong></p>
-        <div class="image-container" style="text-align: center; margin: 20px 0;">
-            <img src="/static/images/GraphGirvanNewman.png" alt="Graph Example" style="max-width: 100%; height: auto;">
+        <div class="image-container-theory">
+            <img src="/static/images/GraphGirvanNewman.png" alt="Graph Example">
         </div>
 
 
