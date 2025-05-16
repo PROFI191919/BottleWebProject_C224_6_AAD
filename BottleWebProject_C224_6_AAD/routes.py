@@ -34,9 +34,29 @@ def EducationalTrajectoryTheory():
         year=datetime.now().year
     )
 
+@route('/EducationalTrajectoryTheoryDecision')
+@view('EducationalTrajectoryTheoryDecision')
+def EducationalTrajectoryTheoryDecision():
+    """Renders the recommendation systems page."""
+    return dict(
+        title='Recommendation systems',
+        message='Your application description page.',
+        year=datetime.now().year
+    )
+
 @route('/CreatingRecommendationSystemTheory')
 @view('CreatingRecommendationSystemTheory')
 def CreatingRecommendationSystemTheory():
+    """Renders the recommendation systems page."""
+    return dict(
+        title='Recommendation systems',
+        message='Your application description page.',
+        year=datetime.now().year
+    )
+
+@route('/CreatingRecommendationSystemDecision')
+@view('CreatingRecommendationSystemDecision')
+def CreatingRecommendationSystemDecision():
     """Renders the recommendation systems page."""
     return dict(
         title='Recommendation systems',
