@@ -75,14 +75,14 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="static\scripts\_references.js" />
-    <Content Include="static\styles\sidebar.css" />
+    <Content Include="static\styles\all_styles.css" />
     <Content Include="views\EducationalTrajectoryTheoryDecision.tpl" />
     <Content Include="views\CreatingRecommendationSystemDecision.tpl" />
     <Content Include="views\DiscoveringCommunityUsingGirvanNewmanDecision.tpl" />
     <Content Include="views\EducationalTrajectoryTheory.tpl" />
     <Content Include="views\DiscoveringCommunityUsingGirvanNewmanTheory.tpl" />
     <Content Include="views\CreatingRecommendationSystemTheory.tpl" />
-    <Content Include="views\authors.tpl" />
+    <Content Include="views\about.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
   </ItemGroup>

@@ -27,7 +27,7 @@
                         <label for="email"><strong>Email:</strong></label><br>
                         <input type="email" id="email" name="email" placeholder="Enter your email" required style="width: 100%; margin-bottom: 12px;"><br>
 
-                        <button type="submit" class="btn-go">Save Result</button>
+                        <button type="submit" class="btn-save">Save Result</button>
                     </form>
                 </div>
             </div>

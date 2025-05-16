@@ -175,7 +175,7 @@ footer {
 
 .btn-go {
     display: inline-block;
-    width: 150px;
+    width: 75px;
     background-color: #3f4ec1;
     color: white;
     border: none;
@@ -185,6 +185,23 @@ footer {
 }
 
 .btn-go:hover {
+    color: white;
+    background-color: #5a67dd;
+    text-decoration: none;
+}
+
+.btn-save {
+    display: inline-block;
+    width: 150px;
+    background-color: #3f4ec1;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-save:hover {
     color: white;
     background-color: #5a67dd;
     text-decoration: none;
