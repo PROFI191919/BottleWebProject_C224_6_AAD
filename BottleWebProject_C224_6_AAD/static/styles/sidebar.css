@@ -239,12 +239,20 @@ footer {
     gap: 30px; /* расстояние между блоками */
 }
 
-.left-panel, .right-panel {
-    flex: 1; /* оба занимают по 50% */
+.left-panel,
+.right-panel .content-block {
+    flex: 1;
     background-color: #fff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-panel .form-block {
+    background-color: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .file-upload {
