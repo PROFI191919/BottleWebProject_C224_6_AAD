@@ -23,8 +23,8 @@
         </ul>
 
         <h3>Graph Example</h3>
-        <div class="image-container" style="text-align: center; margin: 20px 0;">
-            <img src="/static/images/GraphSystemDecision.png" alt="Graph Example" style="max-width: 100%; height: auto;">
+        <div class="image-container-theory">
+            <img src="/static/images/GraphSystemDecision.png" alt="Graph Example">
         </div>
 
         <h2>Recommendation Generation</h2>
