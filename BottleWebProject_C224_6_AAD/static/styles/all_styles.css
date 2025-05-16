@@ -264,11 +264,13 @@ footer {
     padding: 10px 16px;
     border-radius: 8px;
     text-decoration: none;
+    margin-top: 10px;
 }
 
 .btn-calc:hover {
     background-color: #5a67dd;
     text-decoration: none;
+    color: white;
 }
 
 .image-container img {
@@ -391,4 +393,23 @@ tr:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
+}
+
+.note {
+    margin-bottom: 12px;
+}
+
+.node-count-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.matrix-form {
+    margin-top: 20px;
+}
+
+.node-count-form input[type="number"] {
+    width: 60px;
 }

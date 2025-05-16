@@ -1,6 +1,7 @@
 % rebase('layout.tpl', title='Theory Page', year=year)
 
 <div class="content fade-in">
+    <a href="/EducationalTrajectoryTheory" class="btn-calc">&#8592; Back to Theory</a>
     <div class="container">
         <div class="left-panel">
             <h2>Textual Solution</h2>
