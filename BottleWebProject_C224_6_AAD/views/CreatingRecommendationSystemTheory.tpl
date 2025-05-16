@@ -1,6 +1,6 @@
 % rebase('layout.tpl', title='Recommendation Systems Theory', year=year)
 
-<div class="content">
+<div class="content fade-in">
     <h1>Creating a recommendation system</h1>
     <div class="text-block">
 
@@ -18,10 +18,9 @@
         </ul>
 
         <h3>Graph Example</h3>
-        <pre>User1 --5--> ItemA
-User1 --3--> ItemB
-User2 --4--> ItemA
-User3 --2--> ItemB</pre>
+        <div class="image-container" style="text-align: center; margin: 20px 0;">
+            <img src="/static/images/GraphSystemDecision.png" alt="Graph Example" style="max-width: 100%; height: auto;">
+        </div>
 
         <h2>Recommendation Generation</h2>
         <h3>1. Neighborhood Analysis</h3>
@@ -118,6 +117,7 @@ User3 --2--> ItemB</pre>
             <tr><td>U2</td><td>I1</td><td>4</td></tr>
             <tr><td>U2</td><td>I3</td><td>2</td></tr>
         </table>
+        <p>
         <p>Recommendations for U1:</p>
         <ul>
             <li>I3 (based on similarity with U2)</li>
@@ -147,3 +147,24 @@ User3 --2--> ItemB</pre>
         </ul>
     </div>
 </div>
+
+<hr>
+
+<div class="content">
+    <div class="text-block">
+        <h2>Rating Matrix Demo</h2>
+        <p>Set the size of the rating matrix and assign ratings from 1 to 5:</p>
+
+        <label for="matrixSize">Size (n):</label>
+        <input type="number" id="matrixSize" min="1" max="10" value="4">
+        <button class="btn-calc" onclick="generateMatrix()">Generate</button>
+        <button class="btn-calc" onclick="fillRandom()">Fill Random</button>
+
+        <form action="/CreatingRecommendationSystemDecision" id="ratingMatrixForm" style="margin-top: 16px;">
+            <div id="tableContainer"></div>
+            <button type="submit" class="btn-calc" style="margin-top: 16px;">Calculate</button>
+        </form>
+    </div>
+</div>
+
+<script src="/static/scripts/ratingMatrix.js"></script>

@@ -1,10 +1,8 @@
 % rebase('layout.tpl', title='Theory Page', year=year)
 
-<div class="content">
+<div class="content fade-in">
     <h1 class="topic-title">Discovering a Community using Girvan-Newman</h1>
-</div>
 
-<div class="content">
     <div class="text-block">
 
         <h2>Community Analysis</h2>
@@ -79,10 +77,10 @@
 
         <h2>Example</h2>
         <p><strong>Initial Graph:</strong></p>
-        <pre>A - B - C - D
- \ /     \ /
-  E       F
-        </pre>
+        <div class="image-container" style="text-align: center; margin: 20px 0;">
+            <img src="/static/images/GraphGirvanNewman.png" alt="Graph Example" style="max-width: 100%; height: auto;">
+        </div>
+
 
         <p><strong>Execution Process:</strong></p>
         <ul>
@@ -128,18 +126,20 @@
 <div class="content">
   <div class="text-block">
     <h2>Enter Graph Data</h2>
-    <form id="nodeCountForm">
-      <label for="nodeCount"><strong>Number of nodes:</strong></label><br>
-      <input type="number" id="nodeCount" name="nodeCount" min="1" max="100" required style="margin-top: 8px; margin-bottom: 16px;">
-      <br>
-      <button type="button" id="createMatrixBtn" class="button-primary">Create adjacency matrix</button>
+    <p>Set the size of the adjacency matrix and specify connections between nodes by checking the boxes. The graph is undirected, so the matrix is symmetric.</p>
+
+    <form id="nodeCountForm" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <label for="nodeCount" style="margin-bottom: 0;"><strong>Size (n):</strong></label>
+      <input type="number" id="nodeCount" name="nodeCount" min="1" max="10" value="4" required style="width: 60px;">
+      <button type="button" id="createEmptyMatrixBtn" class="btn-calc">Create empty</button>
+      <button type="button" id="fillRandomBtn" class="btn-calc">Fill randomly</button>
     </form>
 
-    <div id="adjacencyMatrixForm" style="margin-top: 20px; display: none;">
+    <form id="adjacencyMatrixForm" action="/DiscoveringCommunityUsingGirvanNewmanDecision" style="margin-top: 20px;">
       <div id="matrixContainer"></div>
-      <button type="submit" class="button-primary" style="margin-top: 10px;">Calculate</button>
+      <button type="submit" class="btn-calc" style="margin-top: 10px;">Calculate</button>
     </form>
   </div>
 </div>
 
-<script src="girvan-newman.js"></script>
+<script src="/static/scripts/girvan-newman.js"></script>

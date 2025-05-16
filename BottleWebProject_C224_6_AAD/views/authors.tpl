@@ -4,7 +4,6 @@
     <h1 class="topic-title">About authors</h1>
     <div class="space-y-8">
 
-        <!-- Первый блок -->
         <div class="text-block">
            <div class="text-content">
     <h2>Demidova Svetlana Dmitrievna</h2>
