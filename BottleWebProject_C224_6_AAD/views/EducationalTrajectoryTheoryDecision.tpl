@@ -2,17 +2,35 @@
 
 <div class="content fade-in">
     <div class="container">
-      <div class="left-panel">
-
-        <h2>Textual Solution</h2>
-        <p>Decision</p>
-      </div>
-      <div class="right-panel">
-
-        <h2>Stepwise Graphs</h2>
-        <div id="graphs-container">
-
+        <div class="left-panel">
+            <h2>Textual Solution</h2>
+            <p>Decision</p>
         </div>
-      </div>
+        <div class="right-panel">
+            <div class="content-block">
+                    <h2>Stepwise Graphs</h2>
+                    <div id="graphs-container">
+
+                    </div>
+
+            </div>
+            <div class="col form-block">
+                <div class="col-content">
+                    <h2>Save Result</h2>
+                    <hr>
+                    <p>You can save the result of the analysis by entering your details below.</p>
+
+                    <form action="/save_result" method="post">
+                        <label for="username"><strong>Your Name:</strong></label><br>
+                        <input type="text" id="username" name="username" placeholder="Enter your name" required style="width: 100%; margin-bottom: 8px;"><br>
+
+                        <label for="email"><strong>Email:</strong></label><br>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required style="width: 100%; margin-bottom: 12px;"><br>
+
+                        <button type="submit" class="btn-go">Save Result</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

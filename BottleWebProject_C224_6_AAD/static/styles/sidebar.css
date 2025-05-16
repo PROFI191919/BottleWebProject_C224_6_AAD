@@ -175,7 +175,7 @@ footer {
 
 .btn-go {
     display: inline-block;
-    width: 75px;
+    width: 150px;
     background-color: #3f4ec1;
     color: white;
     border: none;
@@ -235,22 +235,25 @@ footer {
 }
 
 .container {
-    width: 100%;
-    padding: 0 1px;
-    box-sizing: border-box;
     display: flex;
-    gap: 6px;
-    margin-top: 20px; 
-    margin-bottom: 30px; 
+    gap: 30px;
+    margin-top: 20px;
 }
 
-
-.left-panel, .right-panel {
-    flex: 1; 
+.left-panel,
+.right-panel .content-block {
+    flex: 1;
     background-color: #fff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-panel .form-block {
+    background-color: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .file-upload {
@@ -289,20 +292,6 @@ footer {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 300px;
-
-input[type="file"]::file-selector-button {
-    background-color: #3f4ec1;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-input[type="file"]::file-selector-button:hover {
-    background-color: #3f4ec1;
 }
 
 table {
