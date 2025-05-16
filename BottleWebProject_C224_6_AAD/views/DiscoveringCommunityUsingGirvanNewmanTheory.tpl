@@ -132,16 +132,16 @@
     <h2>Enter Graph Data</h2>
     <p>Set the size of the adjacency matrix and specify connections between nodes by checking the boxes. The graph is undirected, so the matrix is symmetric.</p>
 
-    <form id="nodeCountForm" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-      <label for="nodeCount" style="margin-bottom: 0;"><strong>Size (n):</strong></label>
-      <input type="number" id="nodeCount" name="nodeCount" min="1" max="10" value="4" required style="width: 60px;">
+    <form id="nodeCountForm" class="node-count-form">
+      <label for="nodeCount"><strong>Size (n):</strong></label>
+      <input type="number" id="nodeCount" name="nodeCount" min="1" max="10" value="4" class="node-count-form">
       <button type="button" id="createEmptyMatrixBtn" class="btn-calc">Create empty</button>
       <button type="button" id="fillRandomBtn" class="btn-calc">Fill randomly</button>
     </form>
 
-    <form id="adjacencyMatrixForm" action="/DiscoveringCommunityUsingGirvanNewmanDecision" style="margin-top: 20px;">
+    <form id="adjacencyMatrixForm" action="/DiscoveringCommunityUsingGirvanNewmanDecision" class="matrix-form">
       <div id="matrixContainer"></div>
-      <button type="submit" class="btn-calc" style="margin-top: 10px;">Calculate</button>
+      <button type="submit" class="btn-calc">Calculate</button>
     </form>
   </div>
 </div>
