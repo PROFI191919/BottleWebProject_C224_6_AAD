@@ -19,7 +19,7 @@
         <li><a href="/EducationalTrajectoryTheory">Educational trajectory</a></li>
         <li><a href="/CreatingRecommendationSystemTheory">Recommendation systems</a></li>
         <li><a href="/DiscoveringCommunityUsingGirvanNewmanTheory">Community discovery</a></li>
-        <li><a href="/about">about</a></li>
+        <li><a href="/about">About</a></li>
     </ul>
     <!--<img src="/static/images/fon1.png" alt="Logotip" class="sidebar-logo"/>-->
     <img src="/static/images/logo.png" alt="Logotip" class="sidebar-logo"/>

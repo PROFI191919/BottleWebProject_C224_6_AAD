@@ -1,5 +1,6 @@
 function generateMatrix() {
-    const n = parseInt(document.getElementById('matrixSize').value);
+    const m = parseInt(document.getElementById('numUsers').value);  // rows
+    const n = parseInt(document.getElementById('numItems').value);  // columns
     const container = document.getElementById('tableContainer');
     container.innerHTML = '';
 
@@ -9,18 +10,18 @@ function generateMatrix() {
 
     const topLeft = document.createElement('th');
     topLeft.className = "header";
-    topLeft.innerText = "Items";
+    topLeft.innerText = "Users \\ Items";
     headerRow.appendChild(topLeft);
 
-    for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= n; j++) {
         const th = document.createElement('th');
         th.className = "header";
-        th.innerText = `Item ${i}`;
+        th.innerText = `Item ${j}`;
         headerRow.appendChild(th);
     }
     table.appendChild(headerRow);
 
-    for (let i = 1; i <= n; i++) {
+    for (let i = 1; i <= m; i++) {
         const row = document.createElement('tr');
         const userCell = document.createElement('th');
         userCell.className = "header";

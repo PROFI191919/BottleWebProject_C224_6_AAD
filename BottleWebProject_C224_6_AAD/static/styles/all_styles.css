@@ -344,3 +344,14 @@ tr:hover {
     background-color: #e4e0fa;
     transition: background-color 0.3s ease;
 }
+
+.save-form input[type="text"],
+.save-form input[type="email"] {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 8px;
+    border: 1px solid #3f4ec1;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
