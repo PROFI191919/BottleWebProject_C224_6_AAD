@@ -20,12 +20,12 @@
                     <hr>
                     <p>You can save the result of the analysis by entering your details below.</p>
 
-                    <form action="/save_result" method="post">
+                    <form action="/save_result" method="post" class="save-form">
                         <label for="username"><strong>Your Name:</strong></label><br>
-                        <input type="text" id="username" name="username" placeholder="Enter your name" required style="width: 100%; margin-bottom: 8px;"><br>
+                        <input type="text" id="username" name="username" placeholder="Enter your name" required><br>
 
                         <label for="email"><strong>Email:</strong></label><br>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required style="width: 100%; margin-bottom: 12px;"><br>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
 
                         <button type="submit" class="btn-save">Save Result</button>
                     </form>
