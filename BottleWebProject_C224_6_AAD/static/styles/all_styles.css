@@ -30,6 +30,12 @@ body {
     margin: 15px; /* расстояние между элементами списка */
 }
 
+.sidebar-menu a.active {
+    background-color: #2e3cb2;
+    font-weight: bold;
+    box-shadow: inset 2px 0 0 #fff; /* Белая полоска слева как индикатор */
+}
+
 .sidebar-menu a {
     display: block;
     background-color: #5866d0;
