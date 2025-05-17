@@ -1,85 +1,78 @@
-"""
-Routes and views for the bottle application.
-"""
-
-from bottle import route, view
+from bottle import route, view, request
 from datetime import datetime
+
+# ќбЄртка, добавл€юща€ текущий путь и год во все шаблоны
+def with_common_data(template_name):
+    def decorator(func):
+        @view(template_name)
+        def wrapped(*args, **kwargs):
+            data = func(*args, **kwargs)
+            data['year'] = datetime.now().year
+            data['current_url'] = request.path
+            return data
+        return wrapped
+    return decorator
 
 @route('/')
 @route('/home')
-@view('index')
+@with_common_data('index')
 def home():
-    """Renders the home page."""
-    return dict(
-        year=datetime.now().year
-    )
+    return {
+        'title': 'Home'
+    }
 
 @route('/about')
-@view('about')
+@with_common_data('about')
 def authors():
-    """Renders the about page."""
-    return dict(
-        title='Authors',
-        message='Your application description page.',
-        year=datetime.now().year
-    )
+    return {
+        'title': 'Authors',
+        'message': 'Your application description page.'
+    }
 
 @route('/EducationalTrajectoryTheory')
-@view('EducationalTrajectoryTheory')
+@with_common_data('EducationalTrajectoryTheory')
 def EducationalTrajectoryTheory():
-    """Renders the recommendation systems page."""
-    return dict(
-        title='Recommendation systems',
-        message='Your application description page.',
-        year=datetime.now().year
-    )
+    return {
+        'title': 'Educational trajectory',
+        'message': 'Your application description page.'
+    }
 
 @route('/EducationalTrajectoryTheoryDecision')
-@view('EducationalTrajectoryTheoryDecision')
+@with_common_data('EducationalTrajectoryTheoryDecision')
 def EducationalTrajectoryTheoryDecision():
-    """Renders the recommendation systems page."""
-    return dict(
-        title='Recommendation systems',
-        message='Your application description page.',
-        year=datetime.now().year
-    )
+    return {
+        'title': 'Educational trajectory',
+        'message': 'Your application description page.'
+    }
 
 @route('/CreatingRecommendationSystemTheory')
-@view('CreatingRecommendationSystemTheory')
+@with_common_data('CreatingRecommendationSystemTheory')
 def CreatingRecommendationSystemTheory():
-    """Renders the recommendation systems page."""
-    return dict(
-        title='Recommendation systems',
-        message='Your application description page.',
-        year=datetime.now().year
-    )
+    return {
+        'title': 'Recommendation systems',
+        'message': 'Your application description page.'
+    }
 
 @route('/CreatingRecommendationSystemDecision')
-@view('CreatingRecommendationSystemDecision')
+@with_common_data('CreatingRecommendationSystemDecision')
 def CreatingRecommendationSystemDecision():
-    """Renders the recommendation systems page."""
-    return dict(
-        title='Recommendation systems',
-        message='Your application description page.',
-        year=datetime.now().year
-    )
+    return {
+        'title': 'Recommendation systems',
+        'message': 'Your application description page.'
+    }
 
 @route('/DiscoveringCommunityUsingGirvanNewmanTheory')
-@view('DiscoveringCommunityUsingGirvanNewmanTheory')
+@with_common_data('DiscoveringCommunityUsingGirvanNewmanTheory')
 def DiscoveringCommunityUsingGirvanNewmanTheory():
-    """Renders the recommendation systems page."""
-    return dict(
-        title='Recommendation systems',
-        message='Your application description page.',
-        year=datetime.now().year
-    )
+    return {
+        'title': 'Community discovery',
+        'message': 'Your application description page.'
+    }
 
 @route('/DiscoveringCommunityUsingGirvanNewmanDecision')
-@view('DiscoveringCommunityUsingGirvanNewmanDecision')
+@with_common_data('DiscoveringCommunityUsingGirvanNewmanDecision')
 def DiscoveringCommunityUsingGirvanNewmanDecision():
-    """Renders the recommendation systems page."""
-    return dict(
-        title='Recommendation systems',
-        message='Your application description page.',
-        year=datetime.now().year
-    )
+    return {
+        'title': 'Community discovery',
+        'message': 'Your application description page.'
+    }

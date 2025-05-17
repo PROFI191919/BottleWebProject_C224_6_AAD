@@ -15,11 +15,11 @@
         <h2>Graph Analysis</h2>
     </div>
     <ul class="sidebar-menu">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/EducationalTrajectoryTheory">Educational trajectory</a></li>
-        <li><a href="/CreatingRecommendationSystemTheory">Recommendation systems</a></li>
-        <li><a href="/DiscoveringCommunityUsingGirvanNewmanTheory">Community discovery</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/home" class="{{'active' if current_url == '/home' else ''}}">Home</a></li>
+        <li><a href="/EducationalTrajectoryTheory" class="{{'active' if current_url == '/EducationalTrajectoryTheory' else ''}}">Educational trajectory</a></li>
+        <li><a href="/CreatingRecommendationSystemTheory" class="{{'active' if current_url == '/CreatingRecommendationSystemTheory' else ''}}">Recommendation systems</a></li>
+        <li><a href="/DiscoveringCommunityUsingGirvanNewmanTheory" class="{{'active' if current_url == '/DiscoveringCommunityUsingGirvanNewmanTheory' else ''}}">Community discovery</a></li>
+        <li><a href="/about" class="{{'active' if current_url == '/about' else ''}}">About</a></li>
     </ul>
     <img src="/static/images/logo.png" alt="Logotip" class="sidebar-logo"/>
 </div>
