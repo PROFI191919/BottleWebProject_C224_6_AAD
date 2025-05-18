@@ -23,7 +23,7 @@
         <div class="col">
             <div class="col-content">
                 <h2>Educational trajectory</h2>
-                <hr>
+                <hr class="hr-col">
                 <p>
                     Construction of the optimal educational trajectory demonstrating the route sheet
                     of the learner's training based on the initial graph.
@@ -34,7 +34,7 @@
         <div class="col">
             <div class="col-content">
                 <h2>Recommendation system</h2>
-                <hr>
+                <hr class="hr-col">
                 <p>Generating a list of recommendations for a user based on a bipartite graph of users and their interests.</p>
             </div>
             <a class="btn-go" href="/CreatingRecommendationSystemTheory">Go &raquo;</a>
@@ -42,7 +42,7 @@
         <div class="col">
             <div class="col-content">
                 <h2>Community discovery</h2>
-                <hr>
+                <hr class="hr-col">
                 <p>Community detection in graphs using the Girvan-Newman algorithm. The trajectory determines the order of learning topics.</p>
             </div>
             <a class="btn-go" href="/DiscoveringCommunityUsingGirvanNewmanTheory">Go &raquo;</a>
