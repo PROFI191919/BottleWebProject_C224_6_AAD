@@ -30,13 +30,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="forms\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes.py" />
+    <Compile Include="forms\CreatingRecommendationSystemForm.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="static\" />
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\images\" />
+    <Folder Include="forms\" />
     <Folder Include="static\scripts\" />
     <Folder Include="static\styles\" />
     <Folder Include="views\" />

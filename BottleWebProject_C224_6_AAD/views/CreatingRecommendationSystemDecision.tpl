@@ -5,7 +5,7 @@
     <div class="container">
         <div class="left-panel">
             <h2>Textual Solution</h2>
-            <p>Decision</p>
+            {{!result}}
         </div>
         <div class="right-panel">
             <div class="content-block">

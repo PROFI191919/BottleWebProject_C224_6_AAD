@@ -1,5 +1,5 @@
 % rebase('layout.tpl', title='Recommendation Systems Theory', year=year)
-<
+
 <div class="content fade-in">
     <h1>Creating a recommendation system</h1>
     <div class="skip-theory">
@@ -169,8 +169,9 @@
         <button class="btn-calc" onclick="generateMatrix()">Generate</button>
         <button class="btn-calc" onclick="fillRandom()">Fill Random</button>
 
-        <form action="/CreatingRecommendationSystemDecision" id="ratingMatrixForm" class="matrix-form">
-            <div id="tableContainer"></div>
+        <form action="/CreatingRecommendationSystemDecision" id="ratingMatrixForm" class="matrix-form" method="post">
+            <div id="tableContainer"></div>        
+            <input type="hidden" name="matrixData" id="matrixData">
             <button type="submit" class="btn-calc">Calculate</button>
         </form>
     </div>

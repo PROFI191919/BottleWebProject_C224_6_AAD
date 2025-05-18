@@ -1,4 +1,4 @@
-function generateMatrix() {
+﻿function generateMatrix() {
     const m = parseInt(document.getElementById('numUsers').value);  // rows
     const n = parseInt(document.getElementById('numItems').value);  // columns
     const container = document.getElementById('tableContainer');
@@ -32,7 +32,9 @@ function generateMatrix() {
             const td = document.createElement('td');
             const select = document.createElement('select');
             select.style.padding = "5px";
-            for (let k = 1; k <= 5; k++) {
+            select.name = `rating_u${i}_i${j}`;
+
+            for (let k = 0; k <= 5; k++) {
                 const option = document.createElement('option');
                 option.value = k;
                 option.innerText = k;
@@ -55,4 +57,25 @@ function fillRandom() {
     });
 }
 
-window.addEventListener("DOMContentLoaded", generateMatrix);
+document.addEventListener("DOMContentLoaded", function () {
+    generateMatrix();
+
+    const form = document.getElementById('ratingMatrixForm');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            const selects = document.querySelectorAll('#tableContainer select');
+            const data = [];
+
+            selects.forEach(select => {
+                const [u, i] = select.name.match(/\d+/g);
+                data.push({
+                    user: `User ${u}`,
+                    item: `Item ${i}`,
+                    rating: parseInt(select.value)
+                });
+            });
+
+            document.getElementById('matrixData').value = JSON.stringify(data);
+        });
+    }
+});
