@@ -52,7 +52,7 @@
 function fillRandom() {
     const selects = document.querySelectorAll('#tableContainer select');
     selects.forEach(select => {
-        const randomValue = Math.floor(Math.random() * 5) + 1;
+        const randomValue = Math.floor(Math.random() * 6); // генерирует 0–5
         select.value = randomValue;
     });
 }

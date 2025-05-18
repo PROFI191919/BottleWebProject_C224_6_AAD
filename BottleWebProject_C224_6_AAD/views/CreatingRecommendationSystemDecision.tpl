@@ -2,17 +2,21 @@
 
 <div class="content fade-in">
     <a href="/CreatingRecommendationSystemTheory" class="btn-calc">&#8592; Back to Theory</a>
-    <div class="container">
+    <div class="panel-container">
         <div class="left-panel">
-            <h2>Textual Solution</h2>
-            {{!result}}
+            <div class="content-block">
+                <h2>Textual Solution</h2>
+                {{!result}}
+            </div>
         </div>
         <div class="right-panel">
             <div class="content-block">
                     <h2>Stepwise Graphs</h2>
-                    <div id="graphs-container">
+                    <h3>123rt</h3>
+                    <p>lalalala</p>
+                    <hr>
+                    <p>kol</p>
 
-                    </div>
 
             </div>
             <div class="col form-block">
