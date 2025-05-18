@@ -3,6 +3,9 @@ import pandas as pd
 from sklearn.neighbors import NearestNeighbors
 import json
 from datetime import datetime
+import matplotlib.pyplot as plt
+import networkx as nx
+from networkx.algorithms import bipartite
 
 @post('/CreatingRecommendationSystemDecision')
 def handle_matrix():
@@ -68,5 +71,37 @@ def handle_matrix():
     </ul>
     """
 
+    # Построение графа
+    nd_users = list(interests_matrix.index)
+    nd_interests = list(interests_matrix.columns)
+    edge_list = [
+        (user, interest)
+        for user in nd_users
+        for interest in nd_interests
+        if interests_matrix.at[user, interest] > 0
+    ]
+    edges = {'Edges': edge_list}
+
+    # Сохраняем изображение графа
+    save_graph(nd_users, nd_interests, edges)
+
     year = datetime.now().year
-    return template('CreatingRecommendationSystemDecision', result=full_output, year=year, current_url='/CreatingRecommendationSystemDecision')
+    return template('CreatingRecommendationSystemDecision',
+                    result=full_output,
+                    year=year,
+                    current_url='/CreatingRecommendationSystemDecision')
+
+def save_graph(nd_users, nd_interests, edges):
+    plt.figure(figsize=(15, 10))
+    G = nx.Graph()
+    G.add_nodes_from(nd_users, bipartite=0)
+    G.add_nodes_from(nd_interests, bipartite=1)
+    G.add_edges_from(edges['Edges'])
+
+    pos = nx.bipartite_layout(G, nd_users)
+    nx.draw_networkx(G, pos, node_color='#d8ccf3', edge_color="#ccc", node_size=1500, font_size=24, width=2.5)
+
+    plt.axis('off')
+    plt.tight_layout()
+    plt.savefig('static/images/graph.png', bbox_inches='tight')
+    plt.close()

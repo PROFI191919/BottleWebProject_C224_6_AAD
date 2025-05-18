@@ -11,13 +11,8 @@
         </div>
         <div class="right-panel">
             <div class="content-block">
-                    <h2>Stepwise Graphs</h2>
-                    <h3>123rt</h3>
-                    <p>lalalala</p>
-                    <hr>
-                    <p>kol</p>
-
-
+                <h2>Stepwise Graphs</h2>
+                <img src="/static/images/graph.png" alt="Graph Image" style="max-width: 100%; border-radius: 12px;"/>
             </div>
             <div class="col form-block">
                 <div class="col-content">
