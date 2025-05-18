@@ -53,22 +53,22 @@ def handle_matrix():
         else:
             full_output += "<p><b>Recommendations:</b></p><pre>"
             for item, score in recs.items():
-                full_output += f"{item:<20} {score:.1f}\n"
+                full_output += f"{item:<11} {score:.1f}\n"
             full_output += "</pre>"
         full_output += "<hr>"
 
     # Метрики графа — текстом
     full_output += """
-    <h3>Основные метрики графа интересов:</h3>
+    <h3>Basic interest graph metrics:</h3>
     <ul>
-        <li><b>Степень узла</b>: количество связей (похожих пользователей или общих интересов).</li>
-        <li><b>Центральность</b>: насколько пользователь связан с остальными (например, через PageRank или degree centrality).</li>
-        <li><b>Двудольность</b>: граф можно разделить на пользователей и интересы, без пересечений.</li>
-        <li><b>Плотность графа</b>: отношение количества реальных связей к возможным.</li>
-        <li><b>Максимальное паросочетание</b>: наибольшее количество пар пользователь–интерес без перекрытия.</li>
-        <li><b>Поток в сети</b>: оценка, как информация/интерес может «передаваться» между пользователями.</li>
-        <li><b>Коэффициент кластеризации</b>: степень, с которой пользователи с общими интересами также связаны друг с другом.</li>
+        <li><b>Node degree</b>: number of connections (similar users or common interests).</li>
+        <li><b>Centrality</b>: how connected a user is to others (e.g., via PageRank or degree centrality). </li>
+        <li><b>Bipartite</b>: the graph can be divided into users and interests, with no overlaps.</li>
+        <li><b>Graph density</b>: the ratio of the number of real connections to possible connections. </li>
+        <li><b>Maximal pairwise connectivity</b>: the largest number of user-interest pairs without overlap.</li>
+        <li><b>Clustering coefficient</b>: the degree to which users with common interests are also connected to each other.</li>
     </ul>
+    <hr>
     """
 
     # Построение графа
@@ -80,10 +80,11 @@ def handle_matrix():
         for interest in nd_interests
         if interests_matrix.at[user, interest] > 0
     ]
-    edges = {'Edges': edge_list}
+    edges = {'Edges': edge_list} 
 
-    # Сохраняем изображение графа
-    save_graph(nd_users, nd_interests, edges)
+    # Сохраняем изображение графа, получаем метрики
+    metrics_html = save_graph(nd_users, nd_interests, edges)
+    full_output += metrics_html
 
     year = datetime.now().year
     return template('CreatingRecommendationSystemDecision',
@@ -105,3 +106,23 @@ def save_graph(nd_users, nd_interests, edges):
     plt.tight_layout()
     plt.savefig('static/images/graph.png', bbox_inches='tight')
     plt.close()
+
+    # Рассчитываем метрики графа
+    degree_dict = dict(G.degree())
+    centrality = nx.degree_centrality(G)
+    centrality = {node: round(score, 3) for node, score in centrality.items()}
+    is_bipartite = nx.is_bipartite(G)
+    density = nx.density(G)
+    matching = nx.max_weight_matching(G, maxcardinality=True)
+    clustering = nx.average_clustering(G)
+
+    metrics_html = "<h3>Calculated graph metrics:</h3><ul>"
+    metrics_html += f"<li><b>Degrees:</b> {degree_dict}</li>"
+    metrics_html += f"<li><b>Degree Centrality:</b> {centrality}</li>"
+    metrics_html += f"<li><b>Is Bipartite:</b> {is_bipartite}</li>"
+    metrics_html += f"<li><b>Density:</b> {density:.3f}</li>"
+    metrics_html += f"<li><b>Max Matching:</b> {list(matching)}</li>"
+    metrics_html += f"<li><b>Clustering Coefficient (avg):</b> {clustering:.3f}</li>"
+    metrics_html += "</ul>"
+
+    return metrics_html

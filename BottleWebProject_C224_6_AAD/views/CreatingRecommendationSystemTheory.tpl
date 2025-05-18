@@ -160,11 +160,19 @@
         <h2>Rating Matrix Demo</h2>
         <p>Set the size of the rating matrix and assign ratings from 1 to 5:</p>
 
-        <label for="numUsers">Number of Users (M):</label>
-        <input type="number" id="numUsers" min="1" max="10" value="4" required>
+        <div class="form-group">
+        <label for="numUsers">Number of Users (M):
+            <input type="number" class="input-field" id="numUsers" min="1" max="10" value="4">
+        </label>       
+        <span id="numUsersError" class="error-message"></span>
+        </div>
 
-        <label for="numItems">Number of Items (N):</label>
-        <input type="number" id="numItems" min="1" max="10" value="5" required>
+        <div class="form-group">
+        <label for="numItems">Number of Items (N):
+            <input type="number" class="input-field" id="numItems" min="1" max="10" value="5">
+        </label>       
+        <span id="numItemsError" class="error-message"></span>
+        </div>
 
         <button class="btn-calc" onclick="generateMatrix()">Generate</button>
         <button class="btn-calc" onclick="fillRandom()">Fill Random</button>
