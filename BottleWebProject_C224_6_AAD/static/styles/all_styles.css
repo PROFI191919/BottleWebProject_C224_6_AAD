@@ -287,26 +287,44 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.container {
+.panel-container {
     display: flex;
     gap: 30px;
     margin-top: 20px;
+    max-width: 100%;
 }
 
-.left-panel,
-.right-panel .content-block {
+.right-panel,
+.left-panel {
     flex: 1;
-    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-panel .form-block{
+    flex: 0 0 auto; /* не растягивается */
+}
+
+.left-panel .content-block,
+.right-panel .content-block,
+.right-panel .form-block {
+    background-color: white;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.right-panel .form-block {
-    background-color: white;
-    padding: 20px 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.content-block hr {
+    all: unset;
+    display: block;
+    height: 1px;
+    background: linear-gradient(to right, #3f4ec1, transparent);
+    border: none;
+    margin: 20px 10px;
+    line-height: 0;
+    font-size: 0;
+    padding: 0;
 }
 
 .file-upload {
@@ -418,4 +436,10 @@ tr:hover {
 
 .node-count-form input[type="number"] {
     width: 60px;
+}
+
+ul li, ol li {
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 6px;
 }

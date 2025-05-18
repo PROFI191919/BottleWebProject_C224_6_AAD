@@ -2,7 +2,7 @@
 
 <div class="content fade-in">
     <a href="/DiscoveringCommunityUsingGirvanNewmanTheory" class="btn-calc">&#8592; Back to Theory</a>
-    <div class="container">
+    <div class="panel-container">
         <div class="left-panel">
             <h2>Textual Solution</h2>
             <p>Decision</p>
