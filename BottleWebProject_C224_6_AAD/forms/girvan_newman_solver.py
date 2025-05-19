@@ -6,14 +6,14 @@ from datetime import datetime
 
 @post('/DiscoveringCommunityUsingGirvanNewmanDecision')
 def girvan_newman_decision():
-    # Получаем JSON с матрицей смежности из формы
+    # пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ JSON пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     matrix_json = request.forms.get('matrixData')
     if not matrix_json:
         return "Error: No matrix data provided."
 
-    matrix = json.loads(matrix_json)  # ожидаем: список списков, квадратная матрица
+    matrix = json.loads(matrix_json)  # пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
-    # Создаем граф из матрицы смежности
+    # пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     G = nx.Graph()
     n = len(matrix)
     for i in range(n):
@@ -25,20 +25,20 @@ def girvan_newman_decision():
     if G.number_of_edges() == 0:
         return "Error: The graph has no edges."
 
-    # Запускаем алгоритм Гирвана-Ньюмана
+    # пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     communities_generator = nx.algorithms.community.girvan_newman(G)
 
-    # Получаем все уровни разбиения
+    # пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     levels = []
     try:
         for level in communities_generator:
             levels.append(level)
-            if len(level) >= n:  # максимум до разбиения на отдельные узлы
+            if len(level) >= n:  # пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
                 break
     except StopIteration:
         levels = [[set(G.nodes())]]
 
-    # Формируем текстовый вывод по уровням
+    # пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     result = "<h3>Detected community structures:</h3>"
     for step_idx, level in enumerate(levels, start=1):
         result += f"<p><b>Level {step_idx}:</b></p><ul>"
@@ -47,10 +47,10 @@ def girvan_newman_decision():
             result += f"<li>Community {idx}: {nodes_str}</li>"
         result += "</ul>"
 
-    # Для графа используем первое разбиение (Level 1)
+    # пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (Level 1)
     top_level_communities = levels[0]
 
-    # Сохраняем граф с раскрашенными сообществами
+    # пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     color_map = []
     community_map = {}
     for idx, community in enumerate(top_level_communities):
@@ -68,7 +68,7 @@ def girvan_newman_decision():
     plt.savefig('static/images/graph.png')
     plt.close()
 
-    # Рассчитываем базовые метрики графа
+    # пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     degree_dict = dict(G.degree())
     density = nx.density(G)
     clustering = nx.average_clustering(G)

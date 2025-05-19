@@ -1,4 +1,4 @@
-#!C:\Users\MSI\source\repos\PROFI191919\BottleWebProject_C224_6_AAD\BottleWebProject_C224_6_AAD\env\Scripts\python.exe
+#!C:\Users\Светлана\Desktop\Practice\3 курс\УП_02\BottleWebProject_C224_6_AAD\BottleWebProject_C224_6_AAD\env\Scripts\python.exe
 # -*- coding: utf-8 -*-
 """
 Bottle is a fast and simple micro-framework for small web applications. It
