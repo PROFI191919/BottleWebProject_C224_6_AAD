@@ -33,6 +33,9 @@
     <Compile Include="forms\girvan_newman_solver.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="forms\save.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="forms\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +89,9 @@
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="static\scripts\showFileName.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="static\scripts\validSaveForm.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="static\scripts\_references.js" />
