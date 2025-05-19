@@ -36,13 +36,13 @@ deactivate () {
 deactivate nondestructive
 
 # on Windows, a path can contain colons and backslashes and has to be converted:
-if [ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ] ; then
+if [ "${OSTYPE:-}" = "cygwin" ] || [ "${OSTYPE:-}" = "msys" ] ; then
     # transform D:\path\to\venv to /d/path/to/venv on MSYS
     # and to /cygdrive/d/path/to/venv on Cygwin
-    export VIRTUAL_ENV=$(cygpath "C:\Users\Светлана\Desktop\Practice\3 курс\УП_02\BottleWebProject_C224_6_AAD\BottleWebProject_C224_6_AAD\env")
+    export VIRTUAL_ENV=$(cygpath "C:\Users\MSI\source\repos\PROFI191919\BottleWebProject_C224_6_AAD\BottleWebProject_C224_6_AAD\env")
 else
     # use the path as-is
-    export VIRTUAL_ENV="C:\Users\Светлана\Desktop\Practice\3 курс\УП_02\BottleWebProject_C224_6_AAD\BottleWebProject_C224_6_AAD\env"
+    export VIRTUAL_ENV="C:\Users\MSI\source\repos\PROFI191919\BottleWebProject_C224_6_AAD\BottleWebProject_C224_6_AAD\env"
 fi
 
 _OLD_VIRTUAL_PATH="$PATH"

@@ -54,26 +54,61 @@ function createMatrix(n, fillRandom = false) {
 function setupMatrixControls() {
     const createBtn = document.getElementById("createEmptyMatrixBtn");
     const randomBtn = document.getElementById("fillRandomBtn");
+    const nodeCountInput = document.getElementById("nodeCount");
+    const nodeCountError = document.getElementById("nodeCountError");
 
-    if (createBtn && randomBtn) {
-        createBtn.addEventListener("click", () => {
-            const n = parseInt(document.getElementById("nodeCount").value);
-            if (n >= 1 && n <= 10) {
-                createMatrix(n, false);
-            }
-        });
-
-        randomBtn.addEventListener("click", () => {
-            const n = parseInt(document.getElementById("nodeCount").value);
-            if (n >= 1 && n <= 10) {
-                createMatrix(n, true);
-            }
-        });
+    function validateN() {
+        const n = Number(nodeCountInput.value);
+        if (!Number.isInteger(n) || n < 1 || n > 10) {
+            nodeCountError.textContent = "Please enter an integer between 1 and 10.";
+            nodeCountError.style.display = "block";
+            return null;
+        }
+        nodeCountError.textContent = "";
+        nodeCountError.style.display = "none";
+        return n;
     }
 
+    createBtn.addEventListener("click", () => {
+        const n = validateN();
+        if (n !== null) {
+            createMatrix(n, false);
+        }
+    });
+
+    randomBtn.addEventListener("click", () => {
+        const n = validateN();
+        if (n !== null) {
+            createMatrix(n, true);
+        }
+    });
+
+    // Создаём матрицу по умолчанию при загрузке страницы
     window.addEventListener("DOMContentLoaded", () => {
         createMatrix(4, false);
     });
+
+    // Обработка формы перед отправкой
+    const form = document.getElementById("adjacencyMatrixForm");
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            const n = Number(nodeCountInput.value);
+            const matrixData = [];
+            for (let i = 0; i < n; i++) {
+                const row = [];
+                for (let j = 0; j < n; j++) {
+                    const checkbox = document.querySelector(`input[name='matrix[${i}][${j}]']`);
+                    row.push(checkbox && checkbox.checked ? 1 : 0);
+                }
+                matrixData.push(row);
+            }
+            // Записываем JSON-массив в скрытое поле
+            const hiddenInput = document.getElementById("matrixData");
+            if (hiddenInput) {
+                hiddenInput.value = JSON.stringify(matrixData);
+            }
+        });
+    }
 }
 
 setupMatrixControls();

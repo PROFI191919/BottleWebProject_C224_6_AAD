@@ -30,6 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="forms\girvan_newman_solver.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="forms\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -60,6 +63,7 @@
     <Content Include="static\images\Andrey.jpg" />
     <Content Include="static\images\Antonov.jpg" />
     <Content Include="static\images\Erik.jpg" />
+    <Content Include="static\images\graph.png" />
     <Content Include="static\images\GraphGirvanNewman.png" />
     <Content Include="static\images\GraphSystemDecision.png" />
     <Content Include="static\images\logo.png" />
@@ -97,41 +101,14 @@
     <Content Include="views\layout.tpl" />
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="env1\">
-      <Id>env1</Id>
-      <Version>3.6</Version>
-      <Description>env1 (Python 3.6 (32-bit))</Description>
-      <InterpreterPath>Scripts\python.exe</InterpreterPath>
-      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X86</Architecture>
-    </Interpreter>
-    <Interpreter Include="env2\">
-      <Id>env2</Id>
-      <Version>3.9</Version>
-      <Description>env2 (Python 3.9 (32-bit))</Description>
-      <InterpreterPath>Scripts\python.exe</InterpreterPath>
-      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X86</Architecture>
-    </Interpreter>
-    <Interpreter Include="env3\">
-      <Id>env3</Id>
-      <Version>3.9</Version>
-      <Description>env3 (Python 3.9 (32-bit))</Description>
-      <InterpreterPath>Scripts\python.exe</InterpreterPath>
-      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X86</Architecture>
-    </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
-      <Version>3.9</Version>
-      <Description>env (Python 3.9 (32-bit))</Description>
+      <Version>3.12</Version>
+      <Description>env (Python 3.12 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X86</Architecture>
+      <Architecture>X64</Architecture>
     </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />

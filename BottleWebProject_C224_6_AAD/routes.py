@@ -1,4 +1,4 @@
-from bottle import route, view, request
+from bottle import route, view, request, template
 from datetime import datetime
 
 # ќбЄртка, добавл€юща€ текущий путь и год во все шаблоны
@@ -71,8 +71,8 @@ def DiscoveringCommunityUsingGirvanNewmanTheory():
 
 @route('/DiscoveringCommunityUsingGirvanNewmanDecision')
 @with_common_data('DiscoveringCommunityUsingGirvanNewmanDecision')
-def DiscoveringCommunityUsingGirvanNewmanDecision():
+def CreatingRecommendationSystemDecision():
     return {
-        'title': 'Community discovery',
+        'title': 'Recommendation systems',
         'message': 'Your application description page.'
     }

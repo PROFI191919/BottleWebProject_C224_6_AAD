@@ -5,7 +5,7 @@ This script runs the application using a development server.
 import bottle
 import os
 import sys
-from forms import CreatingRecommendationSystemForm
+from forms import CreatingRecommendationSystemForm, girvan_newman_solver
 
 # routes contains the HTTP handlers for our server and must be imported.
 import routes

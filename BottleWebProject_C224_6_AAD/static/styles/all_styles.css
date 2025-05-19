@@ -472,3 +472,12 @@ ul li, ol li {
 .input-field {
     margin: 0 10px;
 }
+
+
+
+.node-count-form {
+    display: flex;
+    flex-direction: column; /* из строки в колонку */
+    align-items: flex-start; /* чтобы метка и кнопки выравнивались по левому краю */
+    gap: 5px; /* небольшой отступ между элементами */
+}
