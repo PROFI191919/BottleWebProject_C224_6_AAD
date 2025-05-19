@@ -73,8 +73,9 @@
     <Content Include="static\images\Sveta.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
+    <Content Include="static\scripts\downloadRecommendationSystem.js" />
     <Content Include="static\scripts\ratingMatrix.js" />
-    <Content Include="static\scripts\sendAndDownload.js" />
+    <Content Include="static\scripts\downloadGirvanNewman.js" />
     <Content Include="static\scripts\showFileName.js" />
     <Content Include="static\scripts\girvan-newman.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />

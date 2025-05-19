@@ -9,9 +9,6 @@ DATA_FILE = os.path.join(PROJECT_ROOT, 'all_results.json')
 def save_result():
     try:
         data = request.json
-        if not data or 'email' not in data:
-            response.status = 400
-            return {'error': 'Missing email or invalid data'}
 
         # Чтение существующих данных
         if os.path.exists(DATA_FILE):
@@ -31,6 +28,6 @@ def save_result():
         return json.dumps(user_entries, ensure_ascii=False)
 
     except Exception as e:
-        print("🔥 ERROR in save_result:", e)
+        print("ERROR in save_result:", e)
         response.status = 500
         return {'error': str(e)}

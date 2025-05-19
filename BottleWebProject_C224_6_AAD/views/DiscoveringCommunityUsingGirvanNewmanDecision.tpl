@@ -16,19 +16,22 @@
                     <img src="/static/images/graph.png" alt="Graph Image" class="img-decision"/>
                 </div>
             </div>
+
             <div class="col form-block">
                 <div class="col-content">
                     <h2>Save Result</h2>
                     <hr>
                     <p>You can save the result of the analysis as a JSON file.</p>
 
-                    <label for="username"><strong>Your Name:</strong></label><br>
-                    <input type="text" id="username" placeholder="Enter your name" required><br>
+                    <form action="/save_result" method="post" class="save-form">
+                        <label for="username"><strong>Your Name:</strong></label><br>
+                        <input type="text" id="username" placeholder="Enter your name" required><br>
 
-                    <label for="email"><strong>Email:</strong></label><br>
-                    <input type="email" id="email" placeholder="Enter your email" required><br>
+                        <label for="email"><strong>Email:</strong></label><br>
+                        <input type="email" id="email" placeholder="Enter your email" required><br>
 
-                    <button type="button" id="save-btn" class="btn-save">Save Result</button>
+                        <button type="button" id="save-btn" class="btn-save">Save Result</button>
+                    </form>
                 </div>
 
                 </div>
@@ -37,4 +40,4 @@
     </div>
 </div>
 
-<script src="/static/scripts/sendAndDownload.js"></script>
+<script src="/static/scripts/downloadGirvanNewman.js"></script>
