@@ -16,6 +16,7 @@
                     <img src="/static/images/graph.png" alt="Graph Image" class="img-decision"/>
                 </div>
             </div>
+
             <div class="col form-block">
                 <div class="col-content">
                     <h2>Save Result</h2>
@@ -38,3 +39,4 @@
 </div>
 
 <script src="/static/scripts/validSaveForm.js"></script>
+<script src="/static/scripts/downloadGirvanNewman.js"></script>
