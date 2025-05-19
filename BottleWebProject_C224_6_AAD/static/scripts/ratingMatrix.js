@@ -1,6 +1,30 @@
-function generateMatrix() {
+﻿function generateMatrix() {
     const m = parseInt(document.getElementById('numUsers').value);  // rows
     const n = parseInt(document.getElementById('numItems').value);  // columns
+
+    const errorM = document.getElementById('numUsersError');
+    const errorN = document.getElementById('numItemsError');
+
+    let valid = true;
+
+    if (isNaN(m) || m < 1 || m > 10) {
+        errorM.innerText = "Please enter a number between 1 and 10";
+        valid = false;
+    } else {
+        errorM.innerText = "";
+    }
+
+    if (isNaN(n) || n < 1 || n > 10) {
+        errorN.innerText = "Please enter a number between 1 and 10";
+        valid = false;
+    } else {
+        errorN.innerText = "";
+    }
+
+    if (!valid) {
+        return;
+    }
+
     const container = document.getElementById('tableContainer');
     container.innerHTML = '';
 
@@ -32,7 +56,9 @@ function generateMatrix() {
             const td = document.createElement('td');
             const select = document.createElement('select');
             select.style.padding = "5px";
-            for (let k = 1; k <= 5; k++) {
+            select.name = `rating_u${i}_i${j}`;
+
+            for (let k = 0; k <= 5; k++) {
                 const option = document.createElement('option');
                 option.value = k;
                 option.innerText = k;
@@ -50,9 +76,30 @@ function generateMatrix() {
 function fillRandom() {
     const selects = document.querySelectorAll('#tableContainer select');
     selects.forEach(select => {
-        const randomValue = Math.floor(Math.random() * 5) + 1;
+        const randomValue = Math.floor(Math.random() * 6); // генерирует 0–5
         select.value = randomValue;
     });
 }
 
-window.addEventListener("DOMContentLoaded", generateMatrix);
+document.addEventListener("DOMContentLoaded", function () {
+    generateMatrix();
+
+    const form = document.getElementById('ratingMatrixForm');
+    if (form) {
+        form.addEventListener('submit', function (e) {
+            const selects = document.querySelectorAll('#tableContainer select');
+            const data = [];
+
+            selects.forEach(select => {
+                const [u, i] = select.name.match(/\d+/g);
+                data.push({
+                    user: `User ${u}`,
+                    item: `Item ${i}`,
+                    rating: parseInt(select.value)
+                });
+            });
+
+            document.getElementById('matrixData').value = JSON.stringify(data);
+        });
+    }
+});

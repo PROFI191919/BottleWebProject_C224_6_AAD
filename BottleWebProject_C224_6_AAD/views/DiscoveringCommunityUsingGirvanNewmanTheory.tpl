@@ -133,17 +133,27 @@
     <p>Set the size of the adjacency matrix and specify connections between nodes by checking the boxes. The graph is undirected, so the matrix is symmetric.</p>
 
     <form id="nodeCountForm" class="node-count-form">
-      <label for="nodeCount"><strong>Size (n):</strong></label>
-      <input type="number" id="nodeCount" name="nodeCount" min="1" max="10" value="4" class="node-count-form">
-      <button type="button" id="createEmptyMatrixBtn" class="btn-calc">Create empty</button>
-      <button type="button" id="fillRandomBtn" class="btn-calc">Fill randomly</button>
+
+      <div class="input-row" style="display: flex; align-items: center; gap: 10px;">
+        <label for="nodeCount"><strong>Size (n):</strong></label>
+        <input type="number" id="nodeCount" name="nodeCount" min="1" max="10" value="4" style="width: 60px;">
+      </div>
+
+      <span id="nodeCountError" class="error-message" style="display:none; margin-top: 5px;"></span>
+
+      <div class="buttons-row" style="margin-top: 10px; display: flex; gap: 10px;">
+        <button type="button" id="createEmptyMatrixBtn" class="btn-calc">Generate</button>
+        <button type="button" id="fillRandomBtn" class="btn-calc">Fill Random</button>
+      </div>
     </form>
 
-    <form id="adjacencyMatrixForm" action="/DiscoveringCommunityUsingGirvanNewmanDecision" class="matrix-form">
+    <form id="adjacencyMatrixForm" method="post" action="/DiscoveringCommunityUsingGirvanNewmanDecision" class="matrix-form">
       <div id="matrixContainer"></div>
+      <input type="hidden" id="matrixData" name="matrixData" value="">
       <button type="submit" class="btn-calc">Calculate</button>
     </form>
   </div>
 </div>
+
 
 <script src="/static/scripts/girvan-newman.js"></script>
