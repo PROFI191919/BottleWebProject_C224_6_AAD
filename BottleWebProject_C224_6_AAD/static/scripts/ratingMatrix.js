@@ -1,21 +1,21 @@
 ﻿function generateMatrix() {
-    const m = parseInt(document.getElementById('numUsers').value);  // rows
-    const n = parseInt(document.getElementById('numItems').value);  // columns
+    const m = Number(document.getElementById('numUsers').value);  // rows
+    const n = Number(document.getElementById('numItems').value);  // columns
 
     const errorM = document.getElementById('numUsersError');
     const errorN = document.getElementById('numItemsError');
 
     let valid = true;
 
-    if (isNaN(m) || m < 1 || m > 10) {
-        errorM.innerText = "Please enter a number between 1 and 10";
+    if (!Number.isInteger(m) || m < 3 || m > 10) {
+        errorM.innerText = "Please enter a number between 3 and 10";
         valid = false;
     } else {
         errorM.innerText = "";
     }
 
-    if (isNaN(n) || n < 1 || n > 10) {
-        errorN.innerText = "Please enter a number between 1 and 10";
+    if (!Number.isInteger(n) || n < 2 || n > 10) {
+        errorN.innerText = "Please enter a number between 2 and 10";
         valid = false;
     } else {
         errorN.innerText = "";
