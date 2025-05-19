@@ -162,14 +162,14 @@
 
         <div class="form-group">
         <label for="numUsers">Number of Users (M):
-            <input type="number" class="input-field" id="numUsers" min="1" max="10" value="4">
+            <input type="number" class="input-field" id="numUsers" min="3" max="10" value="4">
         </label>       
         <span id="numUsersError" class="error-message"></span>
         </div>
 
         <div class="form-group">
         <label for="numItems">Number of Items (N):
-            <input type="number" class="input-field" id="numItems" min="1" max="10" value="5">
+            <input type="number" class="input-field" id="numItems" min="2" max="10" value="5">
         </label>       
         <span id="numItemsError" class="error-message"></span>
         </div>
