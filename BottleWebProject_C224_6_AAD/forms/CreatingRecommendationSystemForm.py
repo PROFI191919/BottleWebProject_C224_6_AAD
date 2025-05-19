@@ -53,25 +53,11 @@ def handle_matrix():
         else:
             full_output += "<p><b>Recommendations:</b></p><pre>"
             for item, score in recs.items():
-                full_output += f"{item:<11} {score:.1f}\n"
+                full_output += f"{item} {score:.1f}\n"
             full_output += "</pre>"
         full_output += "<hr>"
 
-    # Метрики графа — текстом
-    full_output += """
-    <h3>Basic interest graph metrics:</h3>
-    <ul>
-        <li><b>Node degree</b>: number of connections (similar users or common interests).</li>
-        <li><b>Centrality</b>: how connected a user is to others (e.g., via PageRank or degree centrality). </li>
-        <li><b>Bipartite</b>: the graph can be divided into users and interests, with no overlaps.</li>
-        <li><b>Graph density</b>: the ratio of the number of real connections to possible connections. </li>
-        <li><b>Maximal pairwise connectivity</b>: the largest number of user-interest pairs without overlap.</li>
-        <li><b>Clustering coefficient</b>: the degree to which users with common interests are also connected to each other.</li>
-    </ul>
-    <hr>
-    """
-
-    # Построение графа
+        # Построение графа
     nd_users = list(interests_matrix.index)
     nd_interests = list(interests_matrix.columns)
     edge_list = [
@@ -85,6 +71,22 @@ def handle_matrix():
     # Сохраняем изображение графа, получаем метрики
     metrics_html = save_graph(nd_users, nd_interests, edges)
     full_output += metrics_html
+
+    # Метрики графа - справка
+    full_output += """
+    <h3>Explanation:</h3>
+    <ul>
+        <li><b>Node degree</b>: the number of edges that are connected to this node. In other words,
+         it is the number of neighboring nodes that this node is directly connected to.</li>
+        <li><b>Degree centrality</b>: Estimates the number of direct links (edges) to other nodes.
+         The more links a node has, the higher its degree of centrality, indicating its direct influence on the network.</li>
+        <li><b>Bipartite</b>: is a graph property that is characterized by the ability to partition its nodes into
+         two independent parts, between which there are no edges, and all edges connect nodes from different parts.</li>
+        <li><b>Graph density</b>: the ratio of the number of edges to the maximum possible number of edges.</li>
+        <li><b>Clustering coefficient</b>: the degree to which a node's nearest neighbors interact with each other,
+         that is, the probability that a node's nearest neighbors are connected not only to it, but also to each other.</li>
+    </ul>
+    """
 
     year = datetime.now().year
     return template('CreatingRecommendationSystemDecision',
@@ -113,16 +115,31 @@ def save_graph(nd_users, nd_interests, edges):
     centrality = {node: round(score, 3) for node, score in centrality.items()}
     is_bipartite = nx.is_bipartite(G)
     density = nx.density(G)
-    matching = nx.max_weight_matching(G, maxcardinality=True)
     clustering = nx.average_clustering(G)
 
-    metrics_html = "<h3>Calculated graph metrics:</h3><ul>"
-    metrics_html += f"<li><b>Degrees:</b> {degree_dict}</li>"
-    metrics_html += f"<li><b>Degree Centrality:</b> {centrality}</li>"
-    metrics_html += f"<li><b>Is Bipartite:</b> {is_bipartite}</li>"
+    metrics_html = "<h3>Graph metrics:</h3><ul>"
+
+    # Degrees
+    metrics_html += "<li><b>Node Degrees:</b><pre>"
+    for node, degree in degree_dict.items():
+        metrics_html += f"{node}: {degree}\n"
+    metrics_html += "</pre></li>"
+
+    # Degree Centrality
+    metrics_html += "<li><b>Degree Centrality:</b><pre>"
+    for node, score in centrality.items():
+        metrics_html += f"{node}: {score}\n"
+    metrics_html += "</pre></li>"
+
+    # Is Bipartite
+    metrics_html += f"<li><b>Is Bipartite:</b> {'Yes' if is_bipartite else 'No'}</li>"
+
+    # Density
     metrics_html += f"<li><b>Density:</b> {density:.3f}</li>"
-    metrics_html += f"<li><b>Max Matching:</b> {list(matching)}</li>"
+
+    # Clustering Coefficient
     metrics_html += f"<li><b>Clustering Coefficient (avg):</b> {clustering:.3f}</li>"
+
     metrics_html += "</ul>"
 
     return metrics_html
