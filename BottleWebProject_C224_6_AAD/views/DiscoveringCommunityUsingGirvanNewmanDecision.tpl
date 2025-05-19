@@ -20,7 +20,7 @@
                 <div class="col-content">
                     <h2>Save Result</h2>
                     <hr>
-                    <p>You can save the result of the analysis by entering your details below.</p>
+                    <p>You can save the result of the analysis as a JSON file.</p>
 
                     <form class="save-form" id="saveForm" method="post" action="/save_result">
                         <label for="username"><strong>Your Name:</strong></label><br>
@@ -31,8 +31,6 @@
                         <input type="text" id="email" name="email" placeholder="Enter your email"><br>
                         <span id="emailError" class="error-message"></span><br>
 
-                        <button type="submit" class="btn-save">Save Result</button>
-                    </form>
                 </div>
             </div>
         </div>

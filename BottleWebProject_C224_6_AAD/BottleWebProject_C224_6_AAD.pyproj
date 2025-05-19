@@ -30,12 +30,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="forms\EducationalTrajectory.py" />
     <Compile Include="forms\girvan_newman_solver.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="forms\save.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="forms\saveResult.py" />
     <Compile Include="forms\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +54,7 @@
     <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="all_results.json" />
     <Content Include="requirements.txt" />
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
@@ -74,6 +74,7 @@
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\ratingMatrix.js" />
+    <Content Include="static\scripts\sendAndDownload.js" />
     <Content Include="static\scripts\showFileName.js" />
     <Content Include="static\scripts\girvan-newman.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
@@ -96,9 +97,9 @@
     </Content>
     <Content Include="static\scripts\_references.js" />
     <Content Include="static\styles\all_styles.css" />
+    <Content Include="views\DiscoveringCommunityUsingGirvanNewmanDecision.tpl" />
     <Content Include="views\EducationalTrajectoryTheoryDecision.tpl" />
     <Content Include="views\CreatingRecommendationSystemDecision.tpl" />
-    <Content Include="views\DiscoveringCommunityUsingGirvanNewmanDecision.tpl" />
     <Content Include="views\EducationalTrajectoryTheory.tpl" />
     <Content Include="views\DiscoveringCommunityUsingGirvanNewmanTheory.tpl" />
     <Content Include="views\CreatingRecommendationSystemTheory.tpl" />
