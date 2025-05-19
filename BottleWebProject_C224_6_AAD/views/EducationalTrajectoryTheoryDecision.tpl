@@ -4,16 +4,15 @@
     <a href="/EducationalTrajectoryTheory" class="btn-calc  btn-back">&#8592; Back to Theory</a>
     <div class="panel-container">
         <div class="left-panel">
-            <h2>Textual Solution</h2>
-            <p>Decision</p>
+            <div class="content-block">
+                <h2>Textual Solution</h2>
+                {{!result}}
+            </div>
         </div>
         <div class="right-panel">
             <div class="content-block">
-                    <h2>Stepwise Graphs</h2>
-                    <div id="graphs-container">
-
-                    </div>
-
+                <h2>Interest Graph</h2>
+                <img src="/static/images/graph.png" alt="Graph Image" class="img-decision"/>
             </div>
             <div class="col form-block">
                 <div class="col-content">
