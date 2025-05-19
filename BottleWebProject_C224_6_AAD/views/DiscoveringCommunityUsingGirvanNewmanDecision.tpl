@@ -20,20 +20,21 @@
                 <div class="col-content">
                     <h2>Save Result</h2>
                     <hr>
-                    <p>You can save the result of the analysis by entering your details below.</p>
+                    <p>You can save the result of the analysis as a JSON file.</p>
 
-                    <form action="/save_result" method="post" class="save-form">
-                        <label for="username"><strong>Your Name:</strong></label><br>
-                        <input type="text" id="username" name="username" placeholder="Enter your name" required><br>
+                    <label for="username"><strong>Your Name:</strong></label><br>
+                    <input type="text" id="username" placeholder="Enter your name" required><br>
 
-                        <label for="email"><strong>Email:</strong></label><br>
-                        <input type="hidden" name="result_html" value="{{!result}}">
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+                    <label for="email"><strong>Email:</strong></label><br>
+                    <input type="email" id="email" placeholder="Enter your email" required><br>
 
-                        <button type="submit" class="btn-save">Save Result</button>
-                    </form>
+                    <button type="button" id="save-btn" class="btn-save">Save Result</button>
+                </div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="/static/scripts/sendAndDownload.js"></script>
