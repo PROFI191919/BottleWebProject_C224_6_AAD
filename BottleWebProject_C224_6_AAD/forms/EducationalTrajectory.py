@@ -5,55 +5,28 @@ import uuid
 import networkx as nx
 import matplotlib.pyplot as plt
 from datetime import datetime
+from bottle import post, request, template
+import json
 
-# Строит оптимальный маршрут изучения тем (топологическая сортировка с приоритетом сложности)
+
 def build_learning_path(graph):
     in_degree = {topic: 0 for topic in graph}
     for topic in graph:
-        for dep in graph[topic]["dependencies"]:
-            in_degree[topic] += 1
+        for neighbor in graph[topic]["dependencies"]:
+            in_degree[neighbor] += 1
     queue = [t for t in graph if in_degree[t] == 0]
     queue.sort(key=lambda t: graph[t]["difficulty"])
     path = []
     while queue:
         current = queue.pop(0)
         path.append(current)
-        for neighbor in graph:
-            if current in graph[neighbor]["dependencies"]:
-                in_degree[neighbor] -= 1
-                if in_degree[neighbor] == 0:
-                    queue.append(neighbor)
-        queue.sort(key=lambda t: graph[t]["difficulty"])
+        for neighbor in graph[current]["dependencies"]:
+            in_degree[neighbor] -= 1
+            if in_degree[neighbor] == 0:
+                queue.append(neighbor)
+                queue.sort(key=lambda t: graph[t]["difficulty"])
     return path
 
-def find_shortest_path(graph):
-    G = nx.DiGraph()
-    for topic in graph:
-        G.add_node(topic)
-    for topic, info in graph.items():
-        for dep in info["dependencies"]:
-            if dep not in graph:
-                raise ValueError(f"Dependency '{dep}' is not defined in the graph")
-            G.add_edge(dep, topic)
-
-    sources = [n for n in G.nodes if G.in_degree(n) == 0]
-    sinks = [n for n in G.nodes if G.out_degree(n) == 0]
-
-    shortest = None
-    for s in sources:
-        for t in sinks:
-            if s == t:
-                continue  # пропускаем путь в самого себя
-            try:
-                path = nx.shortest_path(G, source=s, target=t)
-                if shortest is None or len(path) < len(shortest):
-                    shortest = path
-            except nx.NetworkXNoPath:
-                continue
-
-    return shortest if shortest else []
-
-# Вычисляет метрики маршрута: суммарную сложность, максимальную нагрузку и баланс нагрузки
 def compute_metrics(graph, path):
     difficulties = [graph[t]["difficulty"] for t in path]
     total = sum(difficulties)
@@ -67,7 +40,6 @@ def compute_metrics(graph, path):
         "load_balance": load_balance
     }
 
-# Находит ключевые (hubs) и бутылочные (bottlenecks) темы в графе
 def find_relevant_topics(graph):
     out_counts = {t: len(data["dependencies"]) for t, data in graph.items()}
     hubs = sorted(out_counts, key=lambda t: out_counts[t], reverse=True)[:3]
@@ -80,9 +52,8 @@ def find_relevant_topics(graph):
         "hubs": hubs,
         "bottlenecks": bottlenecks
     }
-
-# Рисует и сохраняет картинку графа с маршрутным листом
 def save_graph_image(graph, path, static_dir='static/images'):
+
     os.makedirs(static_dir, exist_ok=True)
     img_path = os.path.join(static_dir, "graph.png")
 
@@ -93,7 +64,7 @@ def save_graph_image(graph, path, static_dir='static/images'):
         for dep in info['dependencies']:
             G.add_edge(dep, topic)
 
-    # Определяет расположение узлов по слоям для визуализации
+    # Определяем уровни (layers) для каждого узла (topological layout)
     in_degree = {node: 0 for node in G.nodes()}
     for u, v in G.edges():
         in_degree[v] += 1
@@ -117,7 +88,7 @@ def save_graph_image(graph, path, static_dir='static/images'):
         if node not in layers:
             layers[node] = max_layer + 1
 
-    # Группирует темы по слоям для расстановки по осям
+    # Группировка по слоям и расположение
     layer_nodes = {}
     for node, lnum in layers.items():
         layer_nodes.setdefault(lnum, []).append(node)
@@ -138,7 +109,7 @@ def save_graph_image(graph, path, static_dir='static/images'):
     ax = plt.gca()
     ax.set_axis_off()
 
-    # Рисует рёбра графа
+    # Рисуем остальные рёбра фиолетовыми
     path_edges = set(zip(path, path[1:]))
     other_edges = [e for e in G.edges() if e not in path_edges]
     nx.draw_networkx_edges(
@@ -152,7 +123,7 @@ def save_graph_image(graph, path, static_dir='static/images'):
         connectionstyle='arc3,rad=0.1',
         ax=ax,
     )
-    # Рисует маршрут оранжевым
+    # Рисуем основной путь оранжевым
     if len(path) > 1:
         nx.draw_networkx_edges(
             G, pos,
@@ -166,7 +137,7 @@ def save_graph_image(graph, path, static_dir='static/images'):
             ax=ax,
         )
 
-    # Рисует прямоугольники для тем
+    # Рисуем прямоугольные узлы
     node_width = 3.2
     node_height = 0.5
     for node, (x, y) in pos.items():
@@ -196,7 +167,7 @@ def save_graph_image(graph, path, static_dir='static/images'):
             zorder=4
         )
 
-    # Масштабирует и сохраняет картинку графа
+    # Масштабирование
     x_vals, y_vals = zip(*pos.values())
     ax.set_xlim(min(x_vals) - node_width, max(x_vals) + node_width)
     ax.set_ylim(min(y_vals) - node_height, max(y_vals) + node_height)
@@ -206,11 +177,10 @@ def save_graph_image(graph, path, static_dir='static/images'):
     plt.close()
     return "graph.png"
 
-# Возвращает текущий год (для подстановки в шаблон)
+
 def get_current_year():
     return datetime.now().year
 
-# Основной обработчик POST-запроса: принимает файл, строит кратчайший маршрут, считает метрики, формирует HTML-ответ
 @post('/EducationalTrajectoryTheoryDecision')
 def educational_trajectory_decision():
     upload = request.files.get('graphFile')
@@ -234,20 +204,15 @@ def educational_trajectory_decision():
                         img_name='default.png',
                         year=get_current_year(),
                         current_url=request.path)
-    # Кратчайший маршрут между первым и последним уровнями
-    shortest_path = find_shortest_path(graph)
-    metrics = compute_metrics(graph, shortest_path)
+    path = build_learning_path(graph)
+    metrics = compute_metrics(graph, path)
     relevant = find_relevant_topics(graph)
-    img_name = save_graph_image(graph, shortest_path)
-    result = "<h3>Shortest Path from Entry to Exit Topic:</h3>"
-    if shortest_path:
-        result += "<ol>"
-        for t in shortest_path:
-            result += f"<li>{t} (Difficulty: {graph[t]['difficulty']})</li>"
-        result += "</ol>"
-    else:
-        result += "<p>Нет доступного маршрута между начальными и конечными темами.</p>"
-    result += "<h3>Metrics (for the shortest path):</h3><ul>"
+    img_name = save_graph_image(graph, path)
+    result = "<h3>Optimal Learning Path:</h3><ol>"
+    for t in path:
+        result += f"<li>{t} (Difficulty: {graph[t]['difficulty']})</li>"
+    result += "</ol>"
+    result += "<h3>Metrics:</h3><ul>"
     result += f"<li>Total difficulty: {metrics['total_difficulty']}</li>"
     result += f"<li>Peak load: {metrics['peak_load']}</li>"
     result += f"<li>Load balance: {metrics['load_balance']:.2f}</li>"
