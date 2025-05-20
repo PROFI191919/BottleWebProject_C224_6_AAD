@@ -263,5 +263,36 @@
         }
       }
     }
+  },
+  {
+    "name": "Erik",
+    "email": "erik.antonov@icloud.com",
+    "date": "2025-05-20T08:49:40.333Z",
+    "textual_result": "Textual Solution\nOptimal Learning Path:\n\nData Structures (Difficulty: 5)\nReact (Difficulty: 6)\nFrontend Frameworks (Difficulty: 5)\nJavaScript (Difficulty: 4)\nAlgorithms (Difficulty: 4)\nProgramming Basics (Difficulty: 1)\nMath Foundations (Difficulty: 2)\nMetrics:\n\nTotal difficulty: 27\nPeak load: 6\nLoad balance: 1.64\nMost Relevant Topics:\n\nKey topics (hubs): Algorithms, Data Structures, JavaScript\nBottleneck topics: Programming Basics, Math Foundations, Algorithms"
+  },
+  {
+    "name": "22132312",
+    "email": "erik.antonov@icloud.com",
+    "date": "2025-05-20T08:55:56.130Z",
+    "result": {
+      "learning_path": [
+        "Data Structures (Difficulty: 5)",
+        "React (Difficulty: 6)",
+        "Frontend Frameworks (Difficulty: 5)",
+        "JavaScript (Difficulty: 4)",
+        "Algorithms (Difficulty: 4)",
+        "Programming Basics (Difficulty: 1)",
+        "Math Foundations (Difficulty: 2)"
+      ],
+      "metrics": {
+        "Total difficulty": "27",
+        "Peak load": "6",
+        "Load balance": "1.64"
+      },
+      "relevant_topics": {
+        "Key topics (hubs)": "Algorithms, Data Structures, JavaScript",
+        "Bottleneck topics": "Programming Basics, Math Foundations, Algorithms"
+      }
+    }
   }
 ]
