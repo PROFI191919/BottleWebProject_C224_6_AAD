@@ -12,7 +12,7 @@
         <div class="right-panel">
             <div class="content-block">
                 <h2>Interest Graph</h2>
-                <img src="/static/images/graph.png" alt="Graph Image" class="img-decision"/>
+                <img src="/static/images/GraphInterest.png" alt="Graph Image" class="img-decision"/>
             </div>
 
             <div class="col form-block">

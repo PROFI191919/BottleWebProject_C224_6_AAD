@@ -66,7 +66,6 @@
     <Content Include="static\images\Andrey.jpg" />
     <Content Include="static\images\Antonov.jpg" />
     <Content Include="static\images\Erik.jpg" />
-    <Content Include="static\images\graph.png" />
     <Content Include="static\images\GraphGirvanNewman.png" />
     <Content Include="static\images\GraphSystemDecision.png" />
     <Content Include="static\images\logo.png" />
