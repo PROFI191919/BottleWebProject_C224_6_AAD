@@ -1,59 +1,101 @@
-function downloadResult() {
-    const name = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const block = document.querySelector(".left-panel .content-block");
+const emailPattern = /^(?=[a-zA-Z0-9])(?!.*\.\.)[a-zA-Z0-9_.-]{2,64}@(?=.{1,255}$)[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
 
-    if (!name || !email) {
-        alert("Please enter name and email");
+function validateEmail(email) {
+    return emailPattern.test(email);
+}
+
+function downloadResult() {
+    const nameInput = document.getElementById("username");
+    const emailInput = document.getElementById("email");
+    const emailError = document.getElementById("emailError");
+    const nameError = document.getElementById("nameError");
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    // Сброс ошибок
+    emailError.innerText = "";
+    nameError.innerText = "";
+
+    let valid = true;
+
+    if (!name) {
+        nameError.innerText = "Enter your name";
+        valid = false;
+    }
+
+    if (!email) {
+        emailError.innerText = "Enter your email";
+        valid = false;
+    } else if (!validateEmail(email)) {
+        emailError.innerText = "Enter a correct email";
+        valid = false;
+    }
+
+    if (!valid) {
+        return; // Прекращаем, если есть ошибки
+    }
+
+    const block = document.querySelector(".left-panel .content-block");
+    if (!block) {
+        alert("No data for save");
         return;
     }
 
-    let graphMetricsObj = {};
-    let foundMetrics = false;
-
+    const usersData = {};
     for (const el of block.children) {
-        if (el.tagName === "H3" && el.textContent.trim() === "Graph metrics:") {
-            foundMetrics = true;
-            continue;
-        }
+        if (el.tagName === "H3" && el.textContent.includes(":")) {
+            const user = el.textContent.replace(":", "").trim();
 
-        if (foundMetrics && el.tagName === "UL") {
-            for (const li of el.querySelectorAll("li")) {
-                const text = li.textContent.trim();
-                const colonIndex = text.indexOf(":");
-                if (colonIndex === -1) continue;
+            if (user === "Graph metrics" || user === "Explanation") continue;
 
-                const key = text.substring(0, colonIndex).trim();
-                const val = text.substring(colonIndex + 1).trim();
+            const interestsP = el.nextElementSibling;
+            const recommendationsPre = interestsP?.nextElementSibling?.nextElementSibling;
 
-                // Сохраняем только нужные метрики
-                if (key === "Is Bipartite") {
-                    graphMetricsObj[key] = val;
-                }
-                else if (key === "Density" || key === "Clustering Coefficient (avg)") {
-                    graphMetricsObj[key] = parseFloat(val);
+            const interests = [];
+            if (interestsP && interestsP.tagName === "P") {
+                const match = interestsP.textContent.match(/List of interests: (.*)/);
+                if (match && match[1] !== "The user has no interests.") {
+                    interests.push(...match[1].split(",").map(i => i.trim()));
                 }
             }
-            break;
+
+            const recommendations = [];
+            if (recommendationsPre && recommendationsPre.tagName === "PRE") {
+                const lines = recommendationsPre.textContent.split("\n").filter(Boolean);
+                for (const line of lines) {
+                    const parts = line.trim().match(/^(.+?)\s+([\d.]+)$/);
+                    if (parts) {
+                        recommendations.push({
+                            item: parts[1].trim(),
+                            score: parseFloat(parts[2])
+                        });
+                    }
+                }
+            }
+
+            usersData[user] = {
+                interests: interests,
+                recommendations: recommendations
+            };
         }
     }
 
-    if (!foundMetrics) {
-        alert("Graph metrics not found");
+    if (Object.keys(usersData).length === 0) {
+        alert("Нет данных для сохранения");
         return;
     }
 
-    // Удаляем ненужные поля
-    const { NodeDegrees, DegreeCentrality, ...filteredMetrics } = graphMetricsObj;
+    const timestamp = Date.now();
 
     const postData = {
-        name: name,
         email: email,
-        result: filteredMetrics,
-        date: new Date().toISOString()
+        name: name,
+        date: new Date().toISOString(),
+        recommendation_system: {
+            [timestamp]: usersData
+        }
     };
-
-    console.log("Final data to save:", postData);
 
     fetch('/save_result', {
         method: 'POST',
@@ -62,20 +104,23 @@ function downloadResult() {
     })
         .then(response => response.json())
         .then(data => {
-            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `${email.replace(/[^a-z0-9]/gi, '_')}_results.json`;
-            a.click();
-            URL.revokeObjectURL(url);
+            if (data.error) {
+                alert("Ошибка: " + data.error);
+            } else {
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${email.replace(/[^a-z0-9]/gi, '_')}_results.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
         })
         .catch(error => {
-            console.error("Error:", error);
-            alert("Save error: " + error.message);
+            console.error("Ошибка при отправке:", error);
+            alert("Произошла ошибка при отправке данных");
         });
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('save-btn');

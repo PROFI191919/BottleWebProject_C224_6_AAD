@@ -2,9 +2,11 @@
 
 <div class="content fade-in">
     <h1>Discovering a Community using Girvan-Newman</h1>
+
+    <!-- Skip theory link to jump straight to calculator -->
     <div class="skip-theory">
         <h3>Don't want to learn the theory?</h3>
-        <a href="#calculator">Go straight to the calculator &rarr;</a>
+        <a href="#calculator">Go straight to the calculator &rarr;</a> <!-- Link to calculator section -->
     </div>
 
     <div class="text-block">
@@ -58,7 +60,6 @@
             <li><em>a<sub>i</sub></em> - fraction of edges connected to community i</li>
         </ul>
 
-
         <h2>Practical Application</h2>
         <p><strong>Using on your site</strong></p>
         <ul>
@@ -84,7 +85,6 @@
         <div class="image-container-theory">
             <img src="/static/images/GraphGirvanNewman.png" alt="Graph Example">
         </div>
-
 
         <p><strong>Execution Process:</strong></p>
         <ul>
@@ -132,28 +132,42 @@
     <h2>Enter Graph Data</h2>
     <p>Set the size of the adjacency matrix and specify connections between nodes by checking the boxes. The graph is undirected, so the matrix is symmetric.</p>
 
+    <!-- Form to set the size of the adjacency matrix -->
     <form id="nodeCountForm" class="node-count-form">
 
       <div class="input-row" style="display: flex; align-items: center; gap: 10px;">
         <label for="nodeCount"><strong>Size (n):</strong></label>
-        <input type="number" id="nodeCount" name="nodeCount" min="1" max="10" value="4" style="width: 60px;">
+        <input type="number" id="nodeCount" name="nodeCount" min="2" max="10" value="4" style="width: 60px;">
       </div>
 
+      <!-- Error message container for invalid node count -->
       <span id="nodeCountError" class="error-message" style="display:none; margin-top: 5px;"></span>
 
       <div class="buttons-row" style="margin-top: 10px; display: flex; gap: 10px;">
+        <!-- Button to generate an empty adjacency matrix -->
         <button type="button" id="createEmptyMatrixBtn" class="btn-calc">Generate</button>
+
+        <!-- Button to fill the adjacency matrix with random connections -->
         <button type="button" id="fillRandomBtn" class="btn-calc">Fill Random</button>
       </div>
     </form>
 
+    <!-- Form to submit the adjacency matrix data for calculation -->
     <form id="adjacencyMatrixForm" method="post" action="/DiscoveringCommunityUsingGirvanNewmanDecision" class="matrix-form">
+      <!-- Container where adjacency matrix checkboxes will be dynamically generated -->
       <div id="matrixContainer"></div>
+
+      <!-- Error message container for matrix validation -->
+      <span id="matrixError" class="error-message" style="display:none; margin: 10px 0; color: red;"></span>
+
+      <!-- Hidden input to hold serialized adjacency matrix data before submission -->
       <input type="hidden" id="matrixData" name="matrixData" value="">
+
+      <!-- Submit button to calculate community detection -->
       <button type="submit" class="btn-calc">Calculate</button>
     </form>
   </div>
 </div>
 
-
+<!-- Include JavaScript file that handles matrix generation, random filling, and submission -->
 <script src="/static/scripts/girvan-newman.js"></script>

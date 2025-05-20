@@ -19,6 +19,9 @@
     <Name>BottleWebProject_C224_6_AAD</Name>
     <RootNamespace>BottleWebProject_C224_6_AAD</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>unittest</TestFramework>
+    <UnitTestPattern>test*.py</UnitTestPattern>
+    <UnitTestRootDirectory>.\tests</UnitTestRootDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,8 +45,13 @@
     <Compile Include="forms\recommendation_system_form.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="tests\test_girvan_newman_solver.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\__init__.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="tests\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />

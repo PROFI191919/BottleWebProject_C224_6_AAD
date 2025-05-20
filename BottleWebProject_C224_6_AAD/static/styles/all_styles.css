@@ -231,6 +231,7 @@ footer {
     padding: 10px 16px;
     border-radius: 8px;
     text-decoration: none;
+    margin-top: 10px;
 }
 
 .btn-save:hover {
@@ -409,12 +410,18 @@ tr:hover {
 .save-form input[type="text"],
 .save-form input[type="email"] {
     width: 100%;
-    margin-bottom: 12px;
+    margin-bottom: 7px;
     padding: 8px;
     border: 1px solid #3f4ec1;
     border-radius: 8px;
     font-size: 15px;
     box-sizing: border-box;
+}
+
+.save-form input[type="text"]:focus,
+.save-form input[type="email"]:focus {
+    outline: none;
+    border: 2px solid #2b2471; !important;
 }
 
 .image-container-theory img {

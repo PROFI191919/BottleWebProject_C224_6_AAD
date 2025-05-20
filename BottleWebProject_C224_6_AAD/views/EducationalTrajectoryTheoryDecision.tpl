@@ -20,17 +20,21 @@
                     <hr>
                     <p>You can save the result of the analysis by entering your details below.</p>
 
-                    <form action="/save_result" method="post" class="save-form">
+                    <form class="save-form" id="saveForm" method="post" action="/save_result">
                         <label for="username"><strong>Your Name:</strong></label><br>
-                        <input type="text" id="username" name="username" placeholder="Enter your name" required><br>
+                        <input type="text" id="username" name="username" placeholder="Enter your name"><br>
+                        <span id="nameError" class="error-message"></span><br>
 
                         <label for="email"><strong>Email:</strong></label><br>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+                        <input type="text" id="email" name="email" placeholder="Enter your email"><br>
+                        <span id="emailError" class="error-message"></span><br>
 
-                        <button type="submit" class="btn-save">Save Result</button>
+                        <button type="button" id="save-btn" class="btn-save">Save Result</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="/static/scripts/validSaveForm.js"></script>
