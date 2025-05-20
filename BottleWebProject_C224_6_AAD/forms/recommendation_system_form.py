@@ -106,7 +106,7 @@ def save_graph(nd_users, nd_interests, edges):
 
     plt.axis('off')
     plt.tight_layout()
-    plt.savefig('static/images/graph.png', bbox_inches='tight')
+    plt.savefig('static/images/GraphInterest.png', bbox_inches='tight')
     plt.close()
 
     # Рассчитываем метрики графа
