@@ -35,10 +35,7 @@
                     <hr>
                     <p>You can save the result of the analysis as a JSON file.</p>
 
-                    <!-- Form: Save Result -->
-                    <form class="save-form" id="saveForm" method="post" action="/save_result">
-
-                        <!-- Field: Username -->
+                    <form action="/save_result" method="post" class="save-form">
                         <label for="username"><strong>Your Name:</strong></label><br>
                         <input type="text" id="username" name="username" placeholder="Enter your name"><br>
                         <span id="nameError" class="error-message"></span><br>
@@ -52,8 +49,9 @@
                         <button type="button" id="save-btn" class="btn-save">Save Result</button>
                     </form>
                 </div>
-            </div>
 
+                </div>
+            </div>
         </div>
     </div>
 </div>
