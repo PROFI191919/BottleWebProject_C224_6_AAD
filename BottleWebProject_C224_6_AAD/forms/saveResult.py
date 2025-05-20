@@ -50,8 +50,7 @@ def save_result():
 
         # Формируем entry с доступными данными
         entry = {
-            'date': date,
-            'source': source,
+            'date': date
         }
         if recommendation_data:
             entry['recommendation_system'] = recommendation_data
