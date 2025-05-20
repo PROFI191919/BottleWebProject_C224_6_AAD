@@ -1,11 +1,39 @@
-function downloadResult() {
-    const name = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const block = document.querySelector(".left-panel .content-block");
+const emailPattern = /^(?=[a-zA-Z0-9])(?!.*\.\.)[a-zA-Z0-9_.-]{2,64}@(?=.{1,255}$)[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
 
-    if (!name || !email) {
-        alert("Please введите имя и email.");
-        return;
+function validateEmail(email) {
+    return emailPattern.test(email);
+}
+
+function downloadResult() {
+    const nameInput = document.getElementById("username");
+    const emailInput = document.getElementById("email");
+    const emailError = document.getElementById("emailError");
+    const nameError = document.getElementById("nameError");
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    // Сброс ошибок
+    emailError.innerText = "";
+    nameError.innerText = "";
+
+    let valid = true;
+
+    if (!name) {
+        nameError.innerText = "Enter your name";
+        valid = false;
+    }
+
+    if (!email) {
+        emailError.innerText = "Enter your email";
+        valid = false;
+    } else if (!validateEmail(email)) {
+        emailError.innerText = "Enter a correct email";
+        valid = false;
+    }
+
+    if (!valid) {
+        return; // Прекращаем, если есть ошибки
     }
 
     let graphMetricsObj = {};

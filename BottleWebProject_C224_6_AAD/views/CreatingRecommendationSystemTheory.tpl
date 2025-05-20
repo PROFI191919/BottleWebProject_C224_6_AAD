@@ -45,9 +45,10 @@
 
         <h3>2. Rating Prediction</h3>
         <p>For each user, predict ratings for unrated items:</p>
-        <p><strong>predicted_rating = user_avg_rating + 
-                  ?(similarity(u,v) ? (rating_v,i - avg_rating_v)) / 
-                  ?|similarity(u,v)|</strong></p>
+        <p><strong>
+            predicted_rating = user_avg_rating + &Sigma;(similarity(u,v) × 
+            (rating<sub>v,i</sub> − avg_rating<sub>v</sub>)) / &Sigma;|similarity(u,v)|
+        </strong><p>
 
         <h3>3. Top-N Recommendations</h3>
         <pre><code>def generate_recommendations(user_id, model, n=5):
