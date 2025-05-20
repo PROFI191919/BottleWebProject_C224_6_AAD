@@ -26,17 +26,18 @@
                     <form class="save-form" id="saveForm" method="post" action="/save_result">
                         <label for="username"><strong>Your Name:</strong></label><br>
                         <input type="text" id="username" name="username" placeholder="Enter your name"><br>
-                        <span id="usernameError" class="error-message"></span><br>
+                        <span id="nameError" class="error-message"></span><br>
 
                         <label for="email"><strong>Email:</strong></label><br>
                         <input type="text" id="email" name="email" placeholder="Enter your email"><br>
                         <span id="emailError" class="error-message"></span><br>
 
+                        <button type="button" id="save-btn" class="btn-save">Save Result</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script src="/static/scripts/validSaveForm.js"></script>
 <script src="/static/scripts/downloadGirvanNewman.js"></script>

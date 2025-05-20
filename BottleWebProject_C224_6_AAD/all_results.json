@@ -196,5 +196,72 @@
         }
       }
     }
+  },
+  {
+    "email": "sveta_dem06@mail.ru",
+    "name": "sveta_dem06",
+    "date": "2025-05-20T05:51:37.387Z",
+    "recommendation_system": {
+      "1747720297387": {
+        "User 1": {
+          "interests": [
+            "Item 1",
+            "Item 2",
+            "Item 3",
+            "Item 4",
+            "Item 5"
+          ],
+          "recommendations": []
+        },
+        "User 2": {
+          "interests": [
+            "Item 1",
+            "Item 3",
+            "Item 5"
+          ],
+          "recommendations": [
+            {
+              "item": "Item 2",
+              "score": 3
+            },
+            {
+              "item": "Item 4",
+              "score": 2.3
+            }
+          ]
+        },
+        "User 3": {
+          "interests": [
+            "Item 2",
+            "Item 3",
+            "Item 4"
+          ],
+          "recommendations": [
+            {
+              "item": "Item 5",
+              "score": 1.3
+            },
+            {
+              "item": "Item 1",
+              "score": 1
+            }
+          ]
+        },
+        "User 4": {
+          "interests": [
+            "Item 2",
+            "Item 3",
+            "Item 4",
+            "Item 5"
+          ],
+          "recommendations": [
+            {
+              "item": "Item 1",
+              "score": 1.7
+            }
+          ]
+        }
+      }
+    }
   }
 ]

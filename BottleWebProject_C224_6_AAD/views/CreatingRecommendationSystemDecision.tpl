@@ -40,5 +40,4 @@
     </div>
 </div>
 
-<script src="/static/scripts/validSaveForm.js"></script>
 <script src="/static/scripts/downloadRecommendationSystem.js"></script>

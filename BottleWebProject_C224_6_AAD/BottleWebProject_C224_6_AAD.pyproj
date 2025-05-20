@@ -93,9 +93,6 @@
     <Content Include="static\scripts\showFileName.js">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="static\scripts\validSaveForm.js">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="static\scripts\_references.js" />
     <Content Include="static\styles\all_styles.css" />
     <Content Include="views\DiscoveringCommunityUsingGirvanNewmanDecision.tpl" />
