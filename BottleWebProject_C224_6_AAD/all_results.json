@@ -294,5 +294,27 @@
         "Bottleneck topics": "Programming Basics, Math Foundations, Algorithms"
       }
     }
+  },
+  {
+    "name": "aladkasldksa",
+    "email": "erik.antonov@icloud.com",
+    "date": "2025-05-20T10:05:03.468Z",
+    "result": {
+      "learning_path": [
+        "Calculus (Difficulty: 5)",
+        "Geometry (Difficulty: 3)",
+        "Trigonometry (Difficulty: 4)",
+        "Algebra (Difficulty: 2)"
+      ],
+      "metrics": {
+        "Total difficulty": "14",
+        "Peak load": "5",
+        "Load balance": "1.12"
+      },
+      "relevant_topics": {
+        "Key topics (hubs)": "Calculus, Geometry, Trigonometry",
+        "Bottleneck topics": "Algebra, Geometry, Trigonometry"
+      }
+    }
   }
 ]

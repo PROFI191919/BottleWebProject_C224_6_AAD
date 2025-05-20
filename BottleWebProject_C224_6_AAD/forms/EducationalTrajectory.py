@@ -8,51 +8,7 @@ from datetime import datetime
 from bottle import post, request, template
 import json
 
-@post('/EducationalTrajectoryTheoryDecision')
-def educational_trajectory_decision():
-    try:
-        upload = request.files.get('graphFile')
-        if not upload:
-            return template('EducationalTrajectoryTheory.tpl',
-                            error_message="No file uploaded",
-                            year=2025)
-        file_data = upload.file.read().decode('utf-8')
-        try:
-            graph = json.loads(file_data)
-        except Exception:
-            return template('EducationalTrajectoryTheory.tpl',
-                            error_message="Invalid JSON format!",
-                            year=2025)
 
-        # Проверка: файл должен быть объектом, а не массивом
-        if not isinstance(graph, dict):
-            return template('EducationalTrajectoryTheory.tpl',
-                            error_message="File must be an object with topics as keys, not an array!",
-                            year=2025)
-        if not (2 <= len(graph) <= 7):
-            return template('EducationalTrajectoryTheory.tpl',
-                            error_message="Number of topics must be between 2 and 7.",
-                            year=2025)
-        for topic, info in graph.items():
-            if (not isinstance(info, dict) or
-                'difficulty' not in info or
-                not isinstance(info['difficulty'], int) or
-                'dependencies' not in info or
-                not isinstance(info['dependencies'], list)):
-                return template('EducationalTrajectoryTheory.tpl',
-                                error_message=f"Wrong format for topic '{topic}': must have 'difficulty' (int) and 'dependencies' (list).",
-                                year=2025)
-
-        # (Здесь должна быть твоя обработка графа и построение пути...)
-        result = "Your personalized learning trajectory will appear here."  # Пример
-        return template('EducationalTrajectoryTheoryDecision.tpl',
-                        result=result,
-                        year=2025)
-
-    except Exception as e:
-        return template('EducationalTrajectoryTheory.tpl',
-                        error_message=f"Server error: {str(e)}",
-                        year=2025)
 def build_learning_path(graph):
     in_degree = {topic: 0 for topic in graph}
     for topic in graph:
@@ -97,9 +53,6 @@ def find_relevant_topics(graph):
         "bottlenecks": bottlenecks
     }
 def save_graph_image(graph, path, static_dir='static/images'):
-    import matplotlib.pyplot as plt
-    import networkx as nx
-    import os
 
     os.makedirs(static_dir, exist_ok=True)
     img_path = os.path.join(static_dir, "graph.png")
