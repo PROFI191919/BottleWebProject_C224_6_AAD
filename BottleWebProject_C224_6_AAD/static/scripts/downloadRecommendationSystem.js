@@ -1,7 +1,13 @@
-const emailPattern = /^(?=[a-zA-Z0-9])(?!.*\.\.)[a-zA-Z0-9_.-]{2,64}@(?=.{1,255}$)[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+const emailPattern = /^(?=[a-zA-Z0-9])(?!.*\.\.)[a-zA-Z0-9_.-]{2,64}@(?=.{1,255}$)[a-zA-Z0-9-]+\.[a-zA-Z]{2,63}$/;
 
 function validateEmail(email) {
     return emailPattern.test(email);
+}
+
+
+function getLocalDateTimeString() {
+    const now = new Date();
+    return now.toLocaleString('ru-RU'); // например: "20.05.2025, 16:20:01"
 }
 
 function downloadResult() {
@@ -91,9 +97,11 @@ function downloadResult() {
     const postData = {
         email: email,
         name: name,
-        date: new Date().toISOString(),
+        date: getLocalDateTimeString(),
         recommendation_system: {
-            [timestamp]: usersData
+            [timestamp]: {
+                data: usersData
+            }
         }
     };
 
@@ -105,7 +113,7 @@ function downloadResult() {
         .then(response => response.json())
         .then(data => {
             if (data.error) {
-                alert("Ошибка: " + data.error);
+                alert("Error: " + data.error);
             } else {
                 const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
                 const url = URL.createObjectURL(blob);
@@ -117,8 +125,8 @@ function downloadResult() {
             }
         })
         .catch(error => {
-            console.error("Ошибка при отправке:", error);
-            alert("Произошла ошибка при отправке данных");
+            console.error("Error in sending: ", error);
+            alert("An error occurred while sending data");
         });
 }
 
