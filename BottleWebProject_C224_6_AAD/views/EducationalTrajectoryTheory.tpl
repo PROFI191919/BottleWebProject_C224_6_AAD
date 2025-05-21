@@ -72,12 +72,13 @@
 
     # Example usage:
     graph = {
-        "Programming Basics": {"difficulty": 2, "dependencies": ["Algorithms", "OOP"]},
-        "Algorithms": {"difficulty": 3, "dependencies": ["Data Structures", "Sorting"]},
-        "OOP": {"difficulty": 3, "dependencies": ["Design Patterns"]},
-        "Data Structures": {"difficulty": 4, "dependencies": []},
-        "Sorting": {"difficulty": 3, "dependencies": []},
-        "Design Patterns": {"difficulty": 5, "dependencies": []},
+  "Programming Basics":        {"difficulty": 1, "dependencies": []},
+  "Math Foundations":          {"difficulty": 2, "dependencies": []},
+  "Algorithms":                {"difficulty": 4, "dependencies": ["Programming Basics", "Math Foundations"]},
+  "Data Structures":           {"difficulty": 5, "dependencies": ["Programming Basics"]},
+  "JavaScript":                {"difficulty": 4, "dependencies": ["Algorithms"]},
+  "Frontend Frameworks":       {"difficulty": 5, "dependencies": ["JavaScript"]},
+  "React":                     {"difficulty": 6, "dependencies": ["Frontend Frameworks"]}
     }
 
     path = build_learning_path(graph)

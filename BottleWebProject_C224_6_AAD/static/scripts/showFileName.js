@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Получаем элементы DOM для управления загрузкой и проверкой файла
     const fileInput = document.getElementById('graphFile');
     const fileNameDisplay = document.getElementById('fileName');
     const errorBlock = document.getElementById('graphError');
     const calculateBtn = document.getElementById('calculateBtn');
 
+    // Обновляет отображаемое имя файла при выборе пользователем
     if (fileInput && fileNameDisplay) {
         fileInput.addEventListener('change', function () {
-            // Показываем имя выбранного файла или "No file selected"
             if (fileInput.files.length > 0) {
                 fileNameDisplay.textContent = fileInput.files[0].name;
             } else {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Проверяет корректность файла и блокирует кнопку если есть ошибка
     if (fileInput && errorBlock && calculateBtn) {
         fileInput.addEventListener('change', function () {
             errorBlock.textContent = '';
@@ -30,24 +32,26 @@ document.addEventListener('DOMContentLoaded', function() {
             reader.onload = function(e) {
                 let graph;
                 try {
-                    graph = JSON.parse(e.target.result);
+                    graph = JSON.parse(e.target.result); // Пытаемся распарсить JSON
                 } catch {
                     errorBlock.textContent = "Invalid JSON format!";
                     calculateBtn.disabled = true;
                     return;
                 }
-                // Проверка структуры
+                // Проверяем, что это объект, а не массив или null
                 if (typeof graph !== "object" || Array.isArray(graph) || !graph) {
                     errorBlock.textContent = "Graph must be an object (not an array)";
                     calculateBtn.disabled = true;
                     return;
                 }
                 const topics = Object.keys(graph);
+                // Проверка количества тем
                 if (topics.length < 2 || topics.length > 7) {
                     errorBlock.textContent = "Number of topics must be between 2 and 7";
                     calculateBtn.disabled = true;
                     return;
                 }
+                // Проверка структуры каждой темы и их зависимостей
                 for (const [topic, info] of Object.entries(graph)) {
                     if (typeof info !== "object" || Array.isArray(info) || !info) {
                         errorBlock.textContent = `Topic '${topic}' must be an object`;
@@ -72,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                 }
-                // Проверка на цикл (DFS)
+                // Проверка на цикл в графе (алгоритм DFS)
                 function hasCycle(graph) {
                     function dfs(node, visited, recStack) {
                         visited.add(node);
@@ -96,16 +100,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     return false;
                 }
+                // Если найден цикл — блокируем кнопку и выводим ошибку
                 if (hasCycle(graph)) {
                     errorBlock.textContent = "The dependency graph contains a cycle! This format is not supported.";
                     calculateBtn.disabled = true;
                     return;
                 }
-                // Всё хорошо
+                // Всё прошло успешно — убираем ошибку и разблокируем кнопку
                 errorBlock.textContent = '';
                 calculateBtn.disabled = false;
             };
-            reader.readAsText(file);
+            reader.readAsText(file); // Читаем файл как текст
         });
     }
 });
