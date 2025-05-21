@@ -1,11 +1,45 @@
+// Шаблон регулярного выражения для проверки email-адреса
+// Условие: начинается с буквы/цифры, без двойных точек, корректная доменная часть
+const emailPattern = /^(?=[a-zA-Z0-9])(?!.*\.\.)[a-zA-Z0-9_.-]{2,64}@(?=.{1,255}$)[a-zA-Z0-9-]+\.[a-zA-Z]{2,63}$/;
+
+// Функция, проверяющая email на соответствие шаблону
+function validateEmail(email) {
+    return emailPattern.test(email);
+}
+
+// Получение текущей локальной даты и времени
+function getLocalDateTimeString() {
+    const now = new Date();
+    return now.toLocaleString('ru-RU');
+}
+
+// Основная функция, вызываемая при нажатии кнопки "Сохранить результат"
 function downloadResult() {
-    const name = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
+    // Получаем элементы ввода имени и email
+    const nameInput = document.getElementById("username");
+    const emailInput = document.getElementById("email");
+
+    // Получаем элементы для вывода ошибок
+    const emailError = document.getElementById("emailError");
+    const nameError = document.getElementById("nameError");
+
+    // Получаем блок, в котором отображаются метрики графа
     const block = document.querySelector(".left-panel .content-block");
 
-    if (!name || !email) {
-        alert("Please введите имя и email.");
-        return;
+    // Получаем значения полей ввода и обрезаем пробелы
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    // Сброс предыдущих сообщений об ошибках
+    emailError.innerText = "";
+    nameError.innerText = "";
+
+    let valid = true;
+
+    // Валидация имени: должно быть непустым
+    if (!name) {
+        nameError.innerText = "Enter your name";
+        valid = false;
     }
 
     // Валидация email: должен быть непустым и соответствовать формату

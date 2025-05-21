@@ -45,6 +45,7 @@
     <Compile Include="forms\recommendation_system_form.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="tests\selenium_Andriyanov.py" />
     <Compile Include="tests\test_girvan_newman_solver.py">
       <SubType>Code</SubType>
     </Compile>
