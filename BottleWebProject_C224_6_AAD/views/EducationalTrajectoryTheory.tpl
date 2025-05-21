@@ -72,12 +72,13 @@
 
     # Example usage:
     graph = {
-        "Programming Basics": {"difficulty": 2, "dependencies": ["Algorithms", "OOP"]},
-        "Algorithms": {"difficulty": 3, "dependencies": ["Data Structures", "Sorting"]},
-        "OOP": {"difficulty": 3, "dependencies": ["Design Patterns"]},
-        "Data Structures": {"difficulty": 4, "dependencies": []},
-        "Sorting": {"difficulty": 3, "dependencies": []},
-        "Design Patterns": {"difficulty": 5, "dependencies": []},
+  "Programming Basics":        {"difficulty": 1, "dependencies": []},
+  "Math Foundations":          {"difficulty": 2, "dependencies": []},
+  "Algorithms":                {"difficulty": 4, "dependencies": ["Programming Basics", "Math Foundations"]},
+  "Data Structures":           {"difficulty": 5, "dependencies": ["Programming Basics"]},
+  "JavaScript":                {"difficulty": 4, "dependencies": ["Algorithms"]},
+  "Frontend Frameworks":       {"difficulty": 5, "dependencies": ["JavaScript"]},
+  "React":                     {"difficulty": 6, "dependencies": ["Frontend Frameworks"]}
     }
 
     path = build_learning_path(graph)
@@ -141,18 +142,19 @@
         <h2>Upload Your Topic Graph</h2>
         <p>To calculate a personalized learning path, upload a JSON file describing your topic graph. The file should include topics, their difficulties, and dependencies.</p>
 
-        <form action="/EducationalTrajectoryTheoryDecision" method="post" enctype="multipart/form-data" class="form-block">
+        <form action="/EducationalTrajectoryTheoryDecision" method="post" enctype="multipart/form-data" class="form-block" autocomplete="off">
             <label for="graphFile"><strong>Choose a JSON file:</strong></label><br>
             <div class="file-upload">
                 <input type="file" id="graphFile" name="graphFile" accept=".json">
                 <button type="button" id="customFileButton" class="btn-file" onclick="document.getElementById('graphFile').click()">Select File</button>
                 <span id="fileName" class="file-name">No file selected</span>
             </div>
+            <div id="graphError" class="error-message" style="color: red; font-weight: bold; margin-top: 10px;"></div>
             <p class="note">After uploading, the system will process your data and display a personalized learning trajectory based on your file.</p>
-            <button type="submit" class="btn-calc">Calculate</button>
+            <button type="submit" class="btn-calc" id="calculateBtn">Calculate</button>
         </form>
     </div>
-    </div>
+</div>
 </div>
 
-<script src="/static/scripts/showFileName.js"></script>
+<script src="/static/scripts/ShowFileName.js"></script>
