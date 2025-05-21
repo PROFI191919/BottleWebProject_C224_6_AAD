@@ -133,5 +133,33 @@ class TestEducationalTrajectory(unittest.TestCase):
         result = find_shortest_path(graph)
         self.assertEqual(result, [], "Ожидается пустой маршрут в изолированном графе")
 
+    def test_shortest_path_large_linear(self):
+
+        graph = {
+            "A": {"dependencies": [], "difficulty": 1},
+            "B": {"dependencies": ["A"], "difficulty": 2},
+            "C": {"dependencies": ["B"], "difficulty": 3},
+            "D": {"dependencies": ["C"], "difficulty": 4},
+            "E": {"dependencies": ["D"], "difficulty": 5},
+            "F": {"dependencies": ["E"], "difficulty": 6}
+        }
+        self.assertEqual(find_shortest_path(graph), ["A", "B", "C", "D", "E", "F"])
+
+    def test_shortest_path_large_branching(self):
+
+        graph = {
+            "A": {"dependencies": [], "difficulty": 1},
+            "B": {"dependencies": [], "difficulty": 2},
+            "C": {"dependencies": ["A", "B"], "difficulty": 3},
+            "D": {"dependencies": [], "difficulty": 1},
+            "E": {"dependencies": ["C", "D"], "difficulty": 4},
+            "F": {"dependencies": ["E"], "difficulty": 5}
+        }
+        path = find_shortest_path(graph)
+
+        self.assertTrue(path[0] in ["A", "B", "D"])
+        self.assertEqual(path[-1], "F")
+        self.assertTrue("E" in path)
+
 if __name__ == '__main__':
     unittest.main()
