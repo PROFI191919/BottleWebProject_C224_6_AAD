@@ -9,13 +9,17 @@ from networkx.algorithms import bipartite
 
 @post('/CreatingRecommendationSystemDecision')
 def handle_matrix():
+    # Получение и декодирование JSON-данных из формы
     matrix_json = request.forms.get('matrixData')
     rating_list = json.loads(matrix_json)
 
+    # Преобразуем список оценок в DataFrame: колонки user, item, rating
     df = pd.DataFrame(rating_list)  # columns: user | item | rating
+
+    # Преобразуем в матрицу интересов (пользователи — строки, объекты — столбцы)
     interests_matrix = df.pivot(index='user', columns='item', values='rating').fillna(0)
 
-    # Создание модели KNN (K Nearest Neighbors - К ближайших соседей)
+    # Создание модели KNN (K Nearest Neighbors - К ближайших соседей) на основе косинусного расстояния
     model = NearestNeighbors(metric='cosine', algorithm='brute')
     model.fit(interests_matrix)
 
@@ -32,11 +36,12 @@ def handle_matrix():
         user_ratings = interests_matrix.loc[user]
         recommendations = similar_ratings.mean(axis=0).loc[user_ratings == 0]
         
+        # Возвращаем отсортированные рекомендации (PS: если вектор нулевой, то берутся первые два user)
         return recommendations.sort_values(ascending=False)
 
     full_output = ""
     for user in interests_matrix.index:
-        # Интересы пользователя
+        # Получение интересов пользователя
         user_interests = interests_matrix.loc[user]
         user_actual_interests = [item for item, score in user_interests.items() if score > 0]
         
@@ -57,7 +62,8 @@ def handle_matrix():
             full_output += "</pre>"
         full_output += "<hr>"
 
-        # Построение графа
+    # Построение графа
+    # Формируем список рёбер для графа (только положительные интересы)
     nd_users = list(interests_matrix.index)
     nd_interests = list(interests_matrix.columns)
     edge_list = [
@@ -68,7 +74,7 @@ def handle_matrix():
     ]
     edges = {'Edges': edge_list} 
 
-    # Сохраняем изображение графа, получаем метрики
+    # Сохраняем изображение графа, получаем метрики в HTML
     metrics_html = save_graph(nd_users, nd_interests, edges)
     full_output += metrics_html
 
@@ -87,7 +93,7 @@ def handle_matrix():
          that is, the probability that a node's nearest neighbors are connected not only to it, but also to each other.</li>
     </ul>
     """
-
+    # Возврат шаблона
     year = datetime.now().year
     return template('CreatingRecommendationSystemDecision',
                     result=full_output,
@@ -95,12 +101,18 @@ def handle_matrix():
                     current_url='/CreatingRecommendationSystemDecision')
 
 def save_graph(nd_users, nd_interests, edges):
+    # Создание изображения графа
     plt.figure(figsize=(15, 10))
     G = nx.Graph()
+
+    # Добавляем узлы с указанием бипартитности
     G.add_nodes_from(nd_users, bipartite=0)
     G.add_nodes_from(nd_interests, bipartite=1)
+
+    # Добавляем рёбра
     G.add_edges_from(edges['Edges'])
 
+    # Расположение узлов для визуализации
     pos = nx.bipartite_layout(G, nd_users)
     nx.draw_networkx(G, pos, node_color='#d8ccf3', edge_color="#ccc", node_size=1500, font_size=24, width=2.5)
 
@@ -119,25 +131,25 @@ def save_graph(nd_users, nd_interests, edges):
 
     metrics_html = "<h3>Graph metrics:</h3><ul>"
 
-    # Degrees
+    # Степени узлов
     metrics_html += "<li><b>Node Degrees:</b><pre>"
     for node, degree in degree_dict.items():
         metrics_html += f"{node}: {degree}\n"
     metrics_html += "</pre></li>"
 
-    # Degree Centrality
+    # Центральность
     metrics_html += "<li><b>Degree Centrality:</b><pre>"
     for node, score in centrality.items():
         metrics_html += f"{node}: {score}\n"
     metrics_html += "</pre></li>"
 
-    # Is Bipartite
+    # Бипартиность
     metrics_html += f"<li><b>Is Bipartite:</b> {'Yes' if is_bipartite else 'No'}</li>"
 
-    # Density
+    # Плотность графа
     metrics_html += f"<li><b>Density:</b> {density:.3f}</li>"
 
-    # Clustering Coefficient
+    # Коэффициент кластеризации
     metrics_html += f"<li><b>Clustering Coefficient (avg):</b> {clustering:.3f}</li>"
 
     metrics_html += "</ul>"

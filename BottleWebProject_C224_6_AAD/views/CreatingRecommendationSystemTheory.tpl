@@ -19,7 +19,7 @@
             <li><strong>Users:</strong> Represented as nodes</li>
             <li><strong>Items:</strong> Represented as nodes</li>
             <li><strong>Weighted edges:</strong> Ratings from 1 to 5</li>
-            <li><strong>Interaction matrix:</strong> Sparse M?N matrix (M users ? N items)</li>
+            <li><strong>Interaction matrix:</strong> Sparse M × N matrix (M users × N items)</li>
         </ul>
 
         <h3>Graph Example</h3>
