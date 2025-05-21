@@ -1,0 +1,18 @@
+{
+  "Algebra": {
+    "difficulty": 2,
+    "dependencies": []
+  },
+  "Geometry": {
+    "difficulty": 3,
+    "dependencies": ["Algebra"]
+  },
+  "Trigonometry": {
+    "difficulty": 4,
+    "dependencies": ["Algebra"]
+  },
+  "Calculus": {
+    "difficulty": 5,
+    "dependencies": ["Geometry", "Trigonometry"]
+  }
+}
