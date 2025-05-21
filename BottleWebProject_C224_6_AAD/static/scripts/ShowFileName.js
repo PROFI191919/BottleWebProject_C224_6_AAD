@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Получаем элементы DOM для управления загрузкой и проверкой файла
+    // Получаем элементы DOM для управления загрузкой и проверкой файла и обновляем его
     const fileInput = document.getElementById('graphFile');
     const fileNameDisplay = document.getElementById('fileName');
     const errorBlock = document.getElementById('graphError');
