@@ -36,7 +36,7 @@ def handle_matrix():
         user_ratings = interests_matrix.loc[user]
         recommendations = similar_ratings.mean(axis=0).loc[user_ratings == 0]
         
-        # Возвращаем отсортированные рекомендации
+        # Возвращаем отсортированные рекомендации (PS: если вектор нулевой, то берутся первые два user)
         return recommendations.sort_values(ascending=False)
 
     full_output = ""

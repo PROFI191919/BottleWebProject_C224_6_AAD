@@ -245,6 +245,42 @@
             }
           }
         }
+      },
+      {
+        "date": "20.05.2025, 14:16:11",
+        "recommendation_system": {
+          "1747739771817": {
+            "data": {
+              "User 1": {
+                "interests": [],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 2.3
+                  },
+                  {
+                    "item": "Item 2",
+                    "score": 1.7
+                  }
+                ]
+              },
+              "User 2": {
+                "interests": [
+                  "Item 1",
+                  "Item 2"
+                ],
+                "recommendations": []
+              },
+              "User 3": {
+                "interests": [
+                  "Item 1",
+                  "Item 2"
+                ],
+                "recommendations": []
+              }
+            }
+          }
+        }
       }
     ]
   }
