@@ -11,7 +11,14 @@ from networkx.algorithms import bipartite
 def handle_matrix():
     # Получение и декодирование JSON-данных из формы
     matrix_json = request.forms.get('matrixData')
-    rating_list = json.loads(matrix_json)
+    
+    if not matrix_json:
+        return {'error': 'Matrix data is empty!'}
+    
+    try:
+        rating_list = json.loads(matrix_json)
+    except json.JSONDecodeError as e:
+        return {'error': f'Invalid JSON: {str(e)}'}
 
     # Преобразуем список оценок в DataFrame: колонки user, item, rating
     df = pd.DataFrame(rating_list)  # columns: user | item | rating

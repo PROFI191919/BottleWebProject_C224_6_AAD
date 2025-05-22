@@ -4,7 +4,7 @@
     <a href="/CreatingRecommendationSystemTheory" class="btn-calc btn-back">&#8592; Back to Theory</a>
     <div class="panel-container">
         <div class="left-panel">
-            <div class="content-block">
+            <div class="content-block" id="resultBlock">
                 <h2>Textual Solution</h2>
                 {{!result}}
             </div>

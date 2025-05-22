@@ -1,0 +1,887 @@
+{
+  "sveta_dem06@mail.ru": {
+    "name": "sveta_dem06",
+    "entries": [
+      {
+        "date": "22.05.2025, 08:00:56",
+        "recommendation_system": {
+          "1747890056030": {
+            "data": {
+              "User 1": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 10": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 2": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 3": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 4": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 5": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 6": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 7": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 8": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 9": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "date": "22.05.2025, 08:02:51",
+        "recommendation_system": {
+          "1747890171826": {
+            "data": {
+              "User 1": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 10": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 2": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 3": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 4": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 5": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 6": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 7": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 8": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 9": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "date": "22.05.2025, 08:06:59",
+        "recommendation_system": {
+          "1747890419422": {
+            "data": {
+              "User 1": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 10": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 2": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 3": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 4": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 5": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 6": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 7": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 8": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 9": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "date": "22.05.2025, 08:12:05",
+        "recommendation_system": {
+          "1747890725209": {
+            "data": {
+              "User 1": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 10": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 2": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 3": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 4": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 5": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 6": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 7": {
+                "interests": [
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 1",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 7",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 8": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 4",
+                  "Item 5",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 3",
+                    "score": 0
+                  },
+                  {
+                    "item": "Item 9",
+                    "score": 0
+                  }
+                ]
+              },
+              "User 9": {
+                "interests": [
+                  "Item 1",
+                  "Item 10",
+                  "Item 2",
+                  "Item 3",
+                  "Item 4",
+                  "Item 6",
+                  "Item 7",
+                  "Item 8",
+                  "Item 9"
+                ],
+                "recommendations": [
+                  {
+                    "item": "Item 5",
+                    "score": 0
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -163,9 +163,9 @@
 
         <div class="form-group">
         <label for="numUsers">Number of Users (M):
-            <input type="number" class="input-field" id="numUsers" min="3" max="10" value="4">
+            <input type="number" name="rows" class="input-field" id="numUsers" min="3" max="10" value="4">
         </label>       
-        <span id="numUsersError" class="error-message"></span>
+        <span id="numUsersError" name="cols" class="error-message"></span>
         </div>
 
         <div class="form-group">
@@ -175,13 +175,13 @@
         <span id="numItemsError" class="error-message"></span>
         </div>
 
-        <button class="btn-calc" onclick="generateMatrix()">Generate</button>
+        <button class="btn-calc" onclick="generateMatrix()" id="generateMatrixBtn">Generate</button>
         <button class="btn-calc" onclick="fillRandom()">Fill Random</button>
 
         <form action="/CreatingRecommendationSystemDecision" id="ratingMatrixForm" class="matrix-form" method="post">
             <div id="tableContainer"></div>        
             <input type="hidden" name="matrixData" id="matrixData">
-            <button type="submit" class="btn-calc">Calculate</button>
+            <button type="submit" class="btn-calc" id="calculateBtn">Calculate</button>
         </form>
     </div>
 </div>
